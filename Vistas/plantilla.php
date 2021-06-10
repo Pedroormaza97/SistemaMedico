@@ -45,7 +45,6 @@
 
    <?php
       include "vistas/modulos/cabezote.php";
-      //include "vistas/modulos/menulateral.php";
       include "vistas/modulos/contenido.php";
       include "vistas/modulos/footer.php";
 
@@ -95,7 +94,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src="vistas/build/js/custom.min.js"></script>
-        
+
       </div>
     </div>
   </body>
