@@ -22,7 +22,8 @@
     <link href="vistas/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="vistas/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
+    <!-- Animate.css -->
+    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
     <!-- bootstrap-progressbar -->
     <link href="vistas/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -51,12 +52,14 @@
     *                     CUERPO DEL CODIGO         *
     *************************************************-->
 
-  <body class="nav-md">
+  <body class="nav-md login">
     <div class="container body">
-      <div class="main_container">
+
 
 
    <?php
+   if (isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] == "ok"){
+   echo '<div class="main_container">';
       include "vistas/modulos/cabezote.php";
 
       if (isset($_GET["ruta"])){
@@ -71,7 +74,10 @@
       }
 
       include "vistas/modulos/footer.php";
-
+      echo '</div>';
+    }else{
+      include "vistas/modulos/login.php";
+    }
     ?>
 
 
