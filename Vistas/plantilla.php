@@ -65,6 +65,8 @@
             $_GET["ruta"] == "calendario"||
                 $_GET["ruta"] == "usuarios") {
           include "vistas/modulos/".$_GET["ruta"].".php";
+        }else{
+          include "vistas/modulos/404.php";
         }
       }
 
