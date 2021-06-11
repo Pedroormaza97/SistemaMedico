@@ -1151,7 +1151,7 @@ body .container.body .right_col {
   color: #fff !important; }
 
 body {
-  color: #73879C;
+  color: #255fac;
   background: #2A3F54;
   font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
   font-size: 13px;
@@ -4007,6 +4007,7 @@ ul.project_files li a i {
   width: 100%;
   height: 100vh;
   background: url(../../img/plantilla/back.jpg);
+  background-position: center;
   background-size: cover;
   overflow: hidden;
   z-index: -1;
@@ -4098,7 +4099,7 @@ a.hiddenanchor {
   padding: 25px 0 0;
   position: relative;
   text-align: center;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 ##255fac;
   min-width: 280px; }
 
 .login_content a,

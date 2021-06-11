@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,7 +65,7 @@
 
 
    <?php
-   if (isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] == "ok"){
+   if (isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] == "true"){
    echo '<div class="main_container">';
       include "vistas/modulos/cabezote.php";
 
