@@ -3,7 +3,7 @@
   <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="index.php" class="site_title"><i class="fa fa-heartbeat" aria-hidden="true"></i> <span>Sistema Médico</span></a>
+        <a href="inicio" class="site_title"><i class="fa fa-heartbeat" aria-hidden="true"></i> <span>Sistema Médico</span></a>
       </div>
 
       <div class="clearfix"></div>
@@ -17,11 +17,12 @@
         <div class="menu_section">
           <h3>General</h3>
           <ul class="nav side-menu">
-            <li><a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
+            <li><a href="inicio"><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
+            </li>
+            <li><a href="calendario"><i class="fa fa-calendar"></i> Calendario <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="index2.html">Dashboard2</a></li>
-                <li><a href="index3.html">Dashboard3</a></li>
+                <li><a href="tables.html">Tables</a></li>
+                <li><a href="tables_dynamic.html">Table Dynamic</a></li>
               </ul>
             </li>
             <li><a><i class="fa fa-edit"></i> Formularios <span class="fa fa-chevron-down"></span></a>
@@ -47,12 +48,6 @@
                 <li><a href="calendar.html">Calendar</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-table"></i> Citas <span class="fa fa-chevron-down"></span></a>
-              <ul class="nav child_menu">
-                <li><a href="tables.html">Tables</a></li>
-                <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-              </ul>
-            </li>
             <li><a><i class="fa fa-bar-chart-o"></i> Pacientes <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="chartjs.html">Chart JS</a></li>
@@ -71,9 +66,9 @@
           </ul>
         </div>
         <div class="menu_section">
-          <h3>Live On</h3>
+          <h3>Herramientas de Admin</h3>
           <ul class="nav side-menu">
-            <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+            <li><a href="usuarios"><i class="fa fa-bug"></i> Administrar Usuarios <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="e_commerce.html">E-commerce</a></li>
                 <li><a href="projects.html">Projects</a></li>

@@ -29,6 +29,19 @@
     <link href="vistas/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="vistas/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- FullCalendar -->
+    <link href="vistas/vendors/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="vistas/vendors/fullcalendar/dist/fullcalendar.print.css" rel="stylesheet" media="print">
+    <!-- bootstrap-wysiwyg -->
+    <link href="vistas/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="vistas/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="vistas/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="vistas/vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="vistas/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="vistas/build/css/custom.css" rel="stylesheet">
   </head>
@@ -45,7 +58,16 @@
 
    <?php
       include "vistas/modulos/cabezote.php";
-      include "vistas/modulos/contenido.php";
+
+      if (isset($_GET["ruta"])){
+
+        if ($_GET["ruta"] == "inicio" ||
+            $_GET["ruta"] == "calendario"||
+                $_GET["ruta"] == "usuarios") {
+          include "vistas/modulos/".$_GET["ruta"].".php";
+        }
+      }
+
       include "vistas/modulos/footer.php";
 
     ?>
@@ -91,6 +113,27 @@
     <!-- bootstrap-daterangepicker -->
     <script src="vistas/vendors/moment/min/moment.min.js"></script>
     <script src="vistas/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- FullCalendar -->
+    <script src="vistas/vendors/moment/min/moment.min.js"></script>
+    <script src="vistas/vendors/fullcalendar/dist/fullcalendar.min.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="vistas/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="vistas/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="vistas/vendors/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="vistas/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <!-- Switchery -->
+    <script src="vistas/vendors/switchery/dist/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="vistas/vendors/select2/dist/js/select2.full.min.js"></script>
+    <!-- Parsley -->
+    <script src="vistas/vendors/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="vistas/vendors/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="vistas/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="vistas/vendors/starrr/dist/starrr.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="vistas/build/js/custom.min.js"></script>
