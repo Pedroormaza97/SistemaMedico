@@ -59,32 +59,39 @@ session_start();
     *                     CUERPO DEL CODIGO         *
     *************************************************-->
 
-  <body class="nav-md login">
-    <div class="container body">
-
+  <body class="nav-md ">
+    <div class="main_container login">
+      <div class="container body">
 
 
    <?php
-   if (isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] == "true"){
-   echo '<div class="main_container">';
-      include "vistas/modulos/cabezote.php";
+  if (isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] == "ok") {
 
-      if (isset($_GET["ruta"])){
+     //echo '<div class="login_wrapper">';
 
-        if ($_GET["ruta"] == "inicio" ||
+       include "vistas/modulos/cabezote.php";
+
+
+       if (isset($_GET["ruta"])) {
+           if ($_GET["ruta"] == "inicio" ||
             $_GET["ruta"] == "calendario"||
-                $_GET["ruta"] == "usuarios") {
-          include "vistas/modulos/".$_GET["ruta"].".php";
-        }else{
-          include "vistas/modulos/404.php";
-        }
-      }
+                $_GET["ruta"] == "usuarios"||
+                    $_GET["ruta"] == "salir") {
+               include "vistas/modulos/".$_GET["ruta"].".php";
+           } else {
+               include "vistas/modulos/404.php";
+           }
+       } else {
+         echo '';
+           include "vistas/modulos/inicio.php";
+           echo '';
+       }
 
-      include "vistas/modulos/footer.php";
-      echo '</div>';
-    }else{
-      include "vistas/modulos/login.php";
-    }
+       include "vistas/modulos/footer.php";
+       //echo '</div>';
+    }else {
+     include "vistas/modulos/login.php";
+   }
     ?>
 
 
@@ -151,9 +158,8 @@ session_start();
     <script src="vistas/vendors/starrr/dist/starrr.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="vistas/build/js/custom.min.js"></script>
-
+    <script src="vistas/build/js/custom.js"></script>
+        </div>
       </div>
-    </div>
   </body>
 </html>

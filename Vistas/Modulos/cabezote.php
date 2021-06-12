@@ -1,4 +1,4 @@
-<header class="main-header">
+
 
   <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
@@ -7,9 +7,6 @@
       </div>
 
       <div class="clearfix"></div>
-
-
-
       <br />
 
       <!-- sidebar menu -->
@@ -151,7 +148,7 @@
                 <span>Settings</span>
               </a>
           <a class="dropdown-item"  href="javascript:;">Help</a>
-            <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+            <a class="dropdown-item"  href="salir"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
           </div>
         </li>
 
@@ -228,4 +225,3 @@
 
 
 <!-- /top navigation -->
-</header>

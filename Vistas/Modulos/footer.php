@@ -6,4 +6,4 @@ Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib
 </div>
 <div class="clearfix"></div>
 </footer>
-<!-- /footer content -->
+<!-- /footer contentaa --  >
