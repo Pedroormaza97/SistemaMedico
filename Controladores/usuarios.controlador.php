@@ -3,7 +3,7 @@ class ControladorUsuarios{
   /**
    * INGRESO DE USUARIOS
    */
-    public function ctrIngresoUsuario(){
+     static public function ctrIngresoUsuario(){
 
       if(isset($_POST["ingUsuario"])){
         if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
@@ -31,8 +31,32 @@ class ControladorUsuarios{
            }
          }
        }
-
-
     }
 
+  /**
+   * REGISTRO DE USUARIOS
+   */
+   static public function ctrCrearUsuario(){
+     if(isset($_POST["nuevoUsuario"])){
+       if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombre"]) &&
+          preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoUsuario"]) &&
+          preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"])){
+
+
+          }else{
+            echo '<a class="btn btn-secondary source" action="new PNotify({
+                            title: "Regular Success",
+                            text: "That thing that you were trying to do worked!",
+                            type: "success",
+                            styling: "bootstrap3"
+                        });">Success</a>';
+
+
+
+          }
+
+     }
+
+   }
 }
+?>
