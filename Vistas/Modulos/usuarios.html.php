@@ -19,38 +19,73 @@
       </div>
     </div>
     <div class="clearfix"></div>
+    <!--CUERPO DESING Y BOTON DE NUEVO USUARIO-->
     <div class="row">
       <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
           <div class="x_title">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Nuevo usuario</button>
-
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+<!--MODAL DE NUEVO USUARIO-->
+            <form id="demo-form" data-parsley-validate class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true"  >
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-
+                  <div class="x_content">
+                  <!--MODAL HEADER-->
                   <div class="modal-header">
                     <h4 class="modal-title" id="myModalLabel">DATOS DEL NUEVO USUARIO</h4>
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                     </button>
                   </div>
+
+                  <!--MODAL CUERPO-->
                   <div class="modal-body">
-                    <h4>Text in a modal</h4>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                  </div>
+
+                      <!-- start form for validation -->
+
+                        <label for="fullname">Nombre * :</label>
+                        <input type="text" id="nombre" class="form-control" name="nuevoNombre" required data-parsley-pattern="^[a-zA-Z ]+$" />
+
+                        <label for="user">User * :</label>
+                        <input type="text" id="usuario" class="form-control" name="nuevoUsuario"  required data-parsley-pattern="^[a-zA-Z0-9_]+$" />
+
+                        <label for="password">Password * :</label>
+                        <input type="text" id="password" class="form-control" name="password"  required data-parsley-pattern="^[a-zA-Z0-9.]+$" />
+                        </div>
+
+                    <!--MODAL FOOTER-->
                   <div class="modal-footer">
+
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+
+                    <button   type="submit" class="btn btn-primary source"  onclick="new PNotify({
+                                    title: 'Oh No!',
+                                    text: 'Something terrible happened.',
+                                    type: 'error',
+                                    styling: 'bootstrap3'
+                                });">GUARDAR</button>
                   </div>
 
-                </div>
+
+
               </div>
-            </div>
 
 
-            <div class="clearfix"></div>
-          </div>
+
+              <!-- end form for validations -->
+
+                    </div>
+                  </div>
+
+
+            </form>
+
+
+
+
+
+
+
+
           <!--TABLA DE USUARIOS-->
 
           <table class="table table-striped projects">

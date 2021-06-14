@@ -54,7 +54,7 @@
                 <li><a href="other_charts.html">Other Charts</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-clone"></i>Recursos <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
                 <li><a href="fixed_footer.html">Fixed Footer</a></li>
@@ -65,23 +65,11 @@
         <div class="menu_section">
           <h3>Herramientas de Admin</h3>
           <ul class="nav side-menu">
-            <li><a href="usuarios"><i class="fa fa-bug"></i> Administrar Usuarios <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-users"></i> Administrar Personas <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="e_commerce.html">E-commerce</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="project_detail.html">Project Detail</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
-                <li><a href="profile.html">Profile</a></li>
-              </ul>
-            </li>
-            <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-              <ul class="nav child_menu">
-                <li><a href="page_403.html">403 Error</a></li>
-                <li><a href="page_404.html">404 Error</a></li>
-                <li><a href="page_500.html">500 Error</a></li>
-                <li><a href="plain_page.html">Plain Page</a></li>
-                <li><a href="login.html">Login Page</a></li>
-                <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                <li><a href="usuarios">Administrar Usuarios</a></li>
+                <li><a href="personas">Administrar Personas</a></li>
+                <li><a href="page_500.html">Opciones de desarrollador</a></li>
               </ul>
             </li>
             <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
@@ -139,7 +127,7 @@
       <ul class=" navbar-right">
         <li class="nav-item dropdown open" style="padding-left: 15px;">
           <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-            <img src="vistas/img/usuarios/img.jpg" alt="">John Doe
+            <img src="vistas/img/usuarios/imguser.png" alt="">John Doe
           </a>
           <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -160,7 +148,7 @@
           <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
             <li class="nav-item">
               <a class="dropdown-item">
-                <span class="image"><img src="vistas/img/usuarios/img.jpg" alt="Profile Image" /></span>
+                <span class="image"><img src="vistas/img/usuarios/imguser.png" alt="Profile Image" /></span>
                 <span>
                   <span>John Smith</span>
                   <span class="time">3 mins ago</span>
@@ -172,7 +160,7 @@
             </li>
             <li class="nav-item">
               <a class="dropdown-item">
-                <span class="image"><img src="vistas/img/usuarios/img.jpg" alt="Profile Image" /></span>
+                <span class="image"><img src="vistas/img/usuarios/imguser.png" alt="Profile Image" /></span>
                 <span>
                   <span>John Smith</span>
                   <span class="time">3 mins ago</span>
@@ -184,7 +172,7 @@
             </li>
             <li class="nav-item">
               <a class="dropdown-item">
-                <span class="image"><img src="vistas/img/usuarios/img.jpg" alt="Profile Image" /></span>
+                <span class="image"><img src="vistas/img/usuarios/imguser.png" alt="Profile Image" /></span>
                 <span>
                   <span>John Smith</span>
                   <span class="time">3 mins ago</span>
@@ -196,7 +184,7 @@
             </li>
             <li class="nav-item">
               <a class="dropdown-item">
-                <span class="image"><img src="vistas/img/usuarios/img.jpg" alt="Profile Image" /></span>
+                <span class="image"><img src="vistas/img/usuarios/imguser.png" alt="Profile Image" /></span>
                 <span>
                   <span>John Smith</span>
                   <span class="time">3 mins ago</span>

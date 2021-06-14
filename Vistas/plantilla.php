@@ -22,7 +22,7 @@ session_start();
     *                     Plugins CSS                *
     *************************************************-->
     <!-- Bootstrap -->
-    <link href="vistas/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vistas/vendors/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="vistas/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
@@ -30,7 +30,7 @@ session_start();
     <!-- iCheck -->
     <link href="vistas/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vistas/vendors/animate.css/animate.min.css" rel="stylesheet">
     <!-- bootstrap-progressbar -->
     <link href="vistas/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -50,6 +50,16 @@ session_start();
     <link href="vistas/vendors/starrr/dist/starrr.css" rel="stylesheet">
     <!-- bootstrap-daterangepicker -->
     <link href="vistas/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="vistas/vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="vistas/vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="vistas/vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="vistas/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="vistas/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="vistas/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="vistas/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="vistas/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="vistas/build/css/custom.css" rel="stylesheet">
   </head>
@@ -59,9 +69,9 @@ session_start();
     *                     CUERPO DEL CODIGO         *
     *************************************************-->
 
-  <body class="nav-md ">
+  <body class="nav-md">
     <div class="main_container login">
-      <div class="container body">
+      <div class="container body ">
 
 
    <?php
@@ -76,15 +86,16 @@ session_start();
            if ($_GET["ruta"] == "inicio" ||
             $_GET["ruta"] == "calendario"||
                 $_GET["ruta"] == "usuarios"||
+                $_GET["ruta"] == "personas"||
                     $_GET["ruta"] == "salir") {
                include "vistas/modulos/".$_GET["ruta"].".php";
            } else {
                include "vistas/modulos/404.php";
            }
        } else {
-         echo '';
+         
            include "vistas/modulos/inicio.php";
-           echo '';
+           
        }
 
        include "vistas/modulos/footer.php";
@@ -98,6 +109,12 @@ session_start();
     <!--*********************************************
     *                     Plugins CSS                *
     *************************************************-->
+    
+                    
+                    <!-- Javascript functions -->
+                  
+
+                        
     <!-- jQuery -->
     <script src="vistas/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -148,18 +165,42 @@ session_start();
     <script src="vistas/vendors/switchery/dist/switchery.min.js"></script>
     <!-- Select2 -->
     <script src="vistas/vendors/select2/dist/js/select2.full.min.js"></script>
-    <!-- Parsley -->
-    <script src="vistas/vendors/parsleyjs/dist/parsley.min.js"></script>
+  
     <!-- Autosize -->
     <script src="vistas/vendors/autosize/dist/autosize.min.js"></script>
     <!-- jQuery autocomplete -->
     <script src="vistas/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
     <!-- starrr -->
     <script src="vistas/vendors/starrr/dist/starrr.js"></script>
+    <!-- PNotify-->
+    <script src="vistas/vendors/pnotify/dist/pnotify.js"></script>
+    <script src="Vistas/vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="Vistas/vendors/pnotify/dist/pnotify.nonblock.js"></script>
+    <!-- Datatables -->
+    <script src="vistas/vendors/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="vistas/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="vistas/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vistas/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="vistas/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="vistas/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vistas/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vistas/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="vistas/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="vistas/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="vistas/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="vistas/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="vistas/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="vistas/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="vistas/vendors/pdfmake/build/vfs_fonts.js"></script> 
+    <!--SweetAle -->
+    <script src="vistas/vendors/sweetAlert2/sweetalert2.all.min.js"></script> 
 
     <!-- Custom Theme Scripts -->
     <script src="vistas/build/js/custom.js"></script>
+
+    <!--<script src="vistas/js/plantilla.js"></script>-->
         </div>
       </div>
+      
   </body>
 </html>
