@@ -21,7 +21,7 @@
 
 <!--MODAL DE NUEVO USUARIO-->
 
-            <form  class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" >
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" >
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="x_content">
@@ -50,7 +50,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="nuevoNombre"  required="required" />
+                                                <input class="form-control"  name="nuevoNombre"  />
                                             </div>
                                         </div>
                                         <div class="field item form-group">
@@ -188,7 +188,7 @@
             </div>
            
 
-        </form>
+        </div>
         <?php
                                              $crearPersona = new ControladorPersonas();
                                              $crearPersona -> ctrCrearPersona();
@@ -229,6 +229,187 @@
                           <td>22-22-22</td>
                           <td>editar</td>
                         </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro</td>
+                          <td>pormaza97</td>
+                          <td>--</td>
+                          <td>Administrador</td>
+                          <td>Activo</td>
+                          <td>22-22-22</td>
+                          <td>editar</td>
+                        </tr>
+
                         
                       </tbody>
                     </table>

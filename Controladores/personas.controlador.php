@@ -5,11 +5,7 @@ class ControladorPersonas{
    */
        static public function ctrCrearPersona(){
     if(isset($_POST["nuevaCedula"])){
-
-        if(preg_match('/^[a-zA-Z0-9 ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCedula"]) &&
-          preg_match('/^[a-zA-Z0-9]/', $_POST["nuevoNombre"]) &&
-           preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"]) &&
-           preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPerfil"])){
+        if(preg_match('/^[a-zA-Z0-9 ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCedula"])){
 
            $tabla = "usuarios";
 

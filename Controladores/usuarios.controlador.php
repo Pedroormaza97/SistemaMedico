@@ -6,6 +6,7 @@ class ControladorUsuarios{
      static public function ctrIngresoUsuario(){
 
       if(isset($_POST["ingUsuario"])){
+        echo '<br><div class="alert alert-succes">CORRECTO!!!!</div>';
         if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
   			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["password"])){
            $tabla = "usuarios";
