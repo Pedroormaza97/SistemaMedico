@@ -32,11 +32,20 @@ class ControladorPersonas{
 
            if($respuesta == "ok"){
             echo '<br><div class="alert alert-succes">CORRECTO!!!!</div>';
-            echo '<div Swal.fire("Good job!","You clicked the button!","success")</div>';
+            //echo '<script>
+
+              //window.location = "personas";
+
+            //</script>';
 
 
            }else if($respuesta == "error"){
             echo '<br><div class="alert alert-succes">No se ingresaron los datos a la BD</div>';
+            //echo '<script>
+
+              //window.location = "personas";
+
+            //</script>';
 
            }
             

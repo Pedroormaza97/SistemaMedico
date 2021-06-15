@@ -83,7 +83,7 @@
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">estado<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                                 <label>
-                                                <input class="form-control" type="checkbox" name="nuevoEstado" class="js-switch" checked="Activo" unchecked="inactivo"/> Activo
+                                                <input class="form-control" type="checkbox" name="nuevoEstado" class="js-switch" checked="activo" unchecked="inactivo"/> Activo
                                               </label></div>
                                         </div>
                                         

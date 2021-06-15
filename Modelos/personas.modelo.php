@@ -7,7 +7,9 @@ require_once "conexion.php";
   
     static public function mdlCrearPersonas($tabla, $datos){
 
+    /*$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`cedula`, `nombre`, `apellido_p`, `apellido_m`, `dir_domicilio`, `sexo`, `etnia`, `estadocivil`, `fecha_naci`, `t_sangre`, `hijosv`, `hijosm`, `tabaquismo`, `ocupacion`, `cargo`, `idpareja`) VALUES (:cedula, :nombre, :apellido_p, :apellido_m, :dir_domicilio, :sexo, :etnia, :estadocivil, :fecha_naci, :t_sangre, :hijosv, :hijosm, :tabaquismo, :ocupacion, :cargo, :idpareja); ");*/
     $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`cedula`, `nombre`, `apellido_p`, `apellido_m`, `dir_domicilio`, `sexo`, `etnia`, `estadocivil`, `fecha_naci`, `t_sangre`, `hijosv`, `hijosm`, `tabaquismo`, `ocupacion`, `cargo`, `idpareja`) VALUES (:cedula, :nombre, :apellido_p, :apellido_m, :dir_domicilio, :sexo, :etnia, :estadocivil, :fecha_naci, :t_sangre, :hijosv, :hijosm, :tabaquismo, :ocupacion, :cargo, :idpareja); ");
+    
     
     
 
@@ -41,7 +43,7 @@ require_once "conexion.php";
 
     $stmt->close();
     
-    $stmt = null;
+    
 
   }
   

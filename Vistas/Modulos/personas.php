@@ -81,7 +81,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Etnia<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevaEtnia" />
+                                                <input class="form-control" name="nuevaEtnia" type="text" />
                                             </div>
                                         </div>
 
@@ -89,7 +89,7 @@
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Estado civil<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
                                           <select class="form-control" name="nuevoEstadocivil">
-                                            <option>Opciones...</option>
+                                          
                                             <option>Soltero (a)</option>
                                             <option>Casado (a)</option>
                                             <option>Divorciado (a)</option>
@@ -102,7 +102,7 @@
                                       <label class="col-form-label col-md-3 col-sm-3 label-align">Fecha de Nacimiento<span class="">*</span>
                                       </label>
                                       <div class="col-md-6 col-sm-6 ">
-                                        <input id="nuevaFechaNacimiento" name="nuevaFechaNacimiento" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
+                                        <input id="nuevaFechaNacimiento" name="nuevaFechaNacimiento" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
                                           onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
                                         <script>
                                           function timeFunctionLong(input) {
@@ -116,8 +116,7 @@
                                     <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Tipo de Sangre<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="nuevoTiposangre" >
-                                            <option>Opciones...</option>
+                                          <select class="form-control" name="nuevoTiposangre">
                                             <option>O+</option>
                                             <option>O-</option>
                                             <option>A+</option>
@@ -126,11 +125,9 @@
                                             <option>B-</option>
                                             <option>AB+</option>
                                             <option>AB-</option>
-                                    
                                           </select>
                                         </div>
                                       </div>
-
                                         
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Hijos varones <span class="required">*</span></label>
@@ -146,7 +143,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Tabaquismo<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevoTabaquismo" />
+                                                <input class="form-control" name="nuevoTabaquismo" type="text"/>
                                             </div>
                                         </div>
                                         <div class="field item form-group">
