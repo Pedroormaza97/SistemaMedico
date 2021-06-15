@@ -6,12 +6,11 @@ class ControladorUsuarios{
      static public function ctrIngresoUsuario(){
 
       if(isset($_POST["ingUsuario"])){
-        echo '<br><div class="alert alert-succes">CORRECTO!!!!</div>';
         if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
   			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["password"])){
            $tabla = "usuarios";
 
-           $item = "UserUsuario";
+           $item = "userUsuario";
            $valor = $_POST["ingUsuario"];
 
            $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
@@ -20,6 +19,7 @@ class ControladorUsuarios{
 
              //echo '<div class="alert -success">Bienvenido al Sistema</div>';
             $_SESSION["iniciarsesion"] = "ok";
+            $_SESSION["nombreUsuario"] = $respuesta["userUsuario"];
 
             echo '<script>
 

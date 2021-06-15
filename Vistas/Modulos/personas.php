@@ -44,13 +44,13 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Cedula<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevaCedula" data-validate-length-range="5,15" type="text" required='required'/></div>
+                                                <input class="form-control" class='optional' name="nuevaCedula"  type="text" required='required'/></div>
                                         </div>
 
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="nuevoNombre"  />
+                                                <input class="form-control"  class='optional' name="nuevoNombre" type="text" required='required'/>
                                             </div>
                                         </div>
                                         <div class="field item form-group">
@@ -69,18 +69,15 @@
                                                 <input class="form-control" class='optional' name="nuevaDireccion" data-validate-length-range="5,15" type="text" /></div>
                                         </div>
                                         <div class="item form-group">
-                      <label class="col-form-label col-md-3 col-sm-3 label-align">Sexo</label>
-                      <div class="col-md-6 col-sm-6 ">
-                        <div id="nuevoSexo" class="btn-group" data-toggle="buttons">
-                          <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                            <input type="radio" name="nuevoSexo" value="masculino" required='required' class="join-btn"> &nbsp; Masculino &nbsp;
-                          </label>
-                          <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                            <input type="radio" name="nuevoSexo" value="femenino" class="join-btn">Femenino
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Sexo<span class="required">*</span></label>
+                                        <div class="col-md-6 col-sm-6 ">
+                                          <p>
+                                          Masculino:
+                                          <input type="radio" class="flat" name="nuevoSexo" id="genderM" value="M" checked="" required /> Femenino:
+                                          <input type="radio" class="flat" name="nuevoSexo" id="genderF" value="F" />
+                                        </p>
+                                        </div>
+                                      </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Etnia<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
@@ -116,6 +113,24 @@
                                         </script>
                                       </div>
                                     </div>
+                                    <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Tipo de Sangre<span class="required">*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                          <select class="form-control" name="nuevoTiposangre" required="required">
+                                            <option>Opciones...</option>
+                                            <option>O+</option>
+                                            <option>O-</option>
+                                            <option>A+</option>
+                                            <option>A-</option>
+                                            <option>B+</option>
+                                            <option>B-</option>
+                                            <option>AB+</option>
+                                            <option>AB-</option>
+                                    
+                                          </select>
+                                        </div>
+                                      </div>
+
                                         
                                       
                                         <div class="field item form-group">
@@ -158,7 +173,8 @@
                                                 </div>
                                             
 
-                                               
+                                              
+
                                            
                                              
                                     </form>

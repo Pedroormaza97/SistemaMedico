@@ -7,13 +7,31 @@ require_once "conexion.php";
   
     static public function mdlCrearPersonas($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ");
+    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`cedula`, `nombre`, `apellido_p`, `apellido_m`, `dir_domicilio`, `sexo`, `etnia`, `estadocivil`) VALUES (:cedula, :nombre, :apellido_p, :apellido_m, :dir_domicilio, :sexo, :etnia, :estadocivil); ");
+    /*$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`cedula`, `nombre`, `apellido_p`, `apellido_m`, `Dir_domicilio`, `Sexo`, `Etnia`, `EstadoCivil`, `Fecha_Naci`, `T_sangre`, `HijosV`, `HijosM`, `Tabaquismo`, `Ocupacion`, `Cargo`, `idPareja`) VALUES (:cedula, :nombre, :apellido_p, :apellido_m, :dir_domicilio, :sexo, :etnia, :estadoCivil, :fecha_Naci, :t_sangre,:hijosv, :hijosm, :tabaquismo, :ocupacion, :cargo, :idpareja); ");*/
+
+
+
+
+    /*$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (cedula, nombre, apellido_p, apellido_m, dir_domicilio, sexo, etnia, estadocivil, fecha_naci, t_sangre, hijosv, hijosm, tabaquismo, ocupacion, cargo, idpareja) VALUES (:cedula,:nombre, :apellido_p, :apellido_m, :dir_domicilio, :sexo, :etnia, :estadocivil:, :fecha_naci,:t_sangre, :hijosv, :hijosm, :tabaquismo, :ocupacion, :cargo, :idpareja)");*/
     
 
-    /*$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-    $stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
-    $stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
-    $stmt->bindParam(":perfil", $datos["perfil"], PDO::PARAM_STR);*/
+    $stmt->bindParam(":cedula", $datos["arr_cedula"], PDO::PARAM_STR);
+    $stmt->bindParam(":nombre", $datos["arr_nombre"], PDO::PARAM_STR);
+    $stmt->bindParam(":apellido_p", $datos["arr_apellido_p"], PDO::PARAM_STR);
+    $stmt->bindParam(":apellido_m", $datos["arr_apellido_m"], PDO::PARAM_STR);
+    $stmt->bindParam(":dir_domicilio", $datos["arr_dir_domicilio"], PDO::PARAM_STR);
+    $stmt->bindParam(":sexo", $datos["arr_sexo"], PDO::PARAM_STR);
+    $stmt->bindParam(":etnia", $datos["arr_etnia"], PDO::PARAM_STR);
+    $stmt->bindParam(":estadocivil", $datos["arr_estadocivil"], PDO::PARAM_STR);
+ //   $stmt->bindParam(":fecha_naci", $datos["arr_fecha_naci"], PDO::PARAM_STR);
+   // $stmt->bindParam(":t_sangre", $datos["arr_t_sangre"], PDO::PARAM_STR);
+  //  $stmt->bindParam(":hijosv", $datos["arr_hijosv"], PDO::PARAM_STR);
+  //  $stmt->bindParam(":hijosm", $datos["arr_hijosm"], PDO::PARAM_STR);
+   // $stmt->bindParam(":tabaquismo", $datos["arr_tabaquismo"], PDO::PARAM_STR);
+   // $stmt->bindParam(":ocupacion", $datos["arr_ocupacion"], PDO::PARAM_STR);
+   // $stmt->bindParam(":cargo", $datos["arr_cargo"], PDO::PARAM_STR);
+    //$stmt->bindParam(":idpareja", $datos["arr_idpareja"], PDO::PARAM_STR);
   
 
     if($stmt->execute()){

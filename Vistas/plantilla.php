@@ -78,7 +78,7 @@ session_start();
   if (isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] == "ok") {
 
      //echo '<div class="login_wrapper">';
-
+        
        include "vistas/modulos/cabezote.php";
 
 
@@ -125,6 +125,7 @@ session_start();
     <script src="vistas/vendors/nprogress/nprogress.js"></script>
     <!-- Chart.js -->
     <script src="vistas/vendors/Chart.js/dist/Chart.min.js"></script>
+
     <!-- gauge.js -->
     <script src="vistas/vendors/gauge.js/dist/gauge.min.js"></script>
     <!-- bootstrap-progressbar -->

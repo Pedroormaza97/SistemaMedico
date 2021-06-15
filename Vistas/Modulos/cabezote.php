@@ -14,9 +14,9 @@
         <div class="menu_section">
           <h3>General</h3>
           <ul class="nav side-menu">
-            <li><a href="inicio"><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
+            <li><a href="inicio"><i class="fa fa-home"></i> Inicio </a>
             </li>
-            <li><a href="calendario"><i class="fa fa-calendar"></i> Calendario <span class="fa fa-chevron-down"></span></a>
+            <li><a href="calendario"><i class="fa fa-calendar"></i> Calendario </a>
               <ul class="nav child_menu">
                 <li><a href="tables.html">Tables</a></li>
                 <li><a href="tables_dynamic.html">Table Dynamic</a></li>
@@ -105,7 +105,7 @@
         <a data-toggle="tooltip" data-placement="top" title="Lock">
           <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
         </a>
-        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+        <a data-toggle="tooltip" data-placement="top" title="Logout" href="salir">
           <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
         </a>
       </div>
@@ -127,7 +127,11 @@
       <ul class=" navbar-right">
         <li class="nav-item dropdown open" style="padding-left: 15px;">
           <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-            <img src="vistas/img/usuarios/imguser.png" alt="">John Doe
+            
+
+
+            
+            <img src="vistas/img/usuarios/imguser.png" alt=""><?php echo $_SESSION["nombreUsuario"];?>
           </a>
           <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item"  href="javascript:;"> Profile</a>
