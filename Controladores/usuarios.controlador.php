@@ -40,18 +40,20 @@ class ControladorUsuarios{
    static public function ctrCrearUsuario(){
     if(isset($_POST["nuevoUsuario"])){
 
-        if(preg_match('/^[a-zA-Z0-9 ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombre"]) &&
-          preg_match('/^[a-zA-Z0-9]/', $_POST["nuevoUsuario"]) &&
-           preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"]) &&
-           preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPerfil"])){
+        if(preg_match('/^[a-zA-Z0-9 ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoUsuario"]) &&
+          preg_match('/^[a-zA-Z0-9]/', $_POST["nuevoPassword"]) &&
+           preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoRol"]) &&
+           preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevaCedulap"])&&
+           preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoEstado"])){
 
            $tabla = "usuarios";
 
 
-           $datos = array("nombre" => $_POST["nuevoNombre"],
-                        "usuario" => $_POST["nuevoUsuario"],
-                        "password" => $_POST["nuevoPassword"],
-                        "perfil" => $_POST["nuevoPerfil"]);
+           $datos = array("arr_usuario" => $_POST["nuevoUsuario"],
+                        "arr_password" => $_POST["nuevoPassword"],
+                        "arr_rol" => $_POST["nuevoRol"],
+                        "arr_cedulap" => $_POST["nuevaCedulap"],
+                        "arr_estado" => $_POST["nuevoEstado"]);
           
 
            $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);

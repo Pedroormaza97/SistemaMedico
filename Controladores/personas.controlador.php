@@ -32,6 +32,7 @@ class ControladorPersonas{
 
            if($respuesta == "ok"){
             echo '<br><div class="alert alert-succes">CORRECTO!!!!</div>';
+            echo '<div Swal.fire("Good job!","You clicked the button!","success")</div>';
 
 
            }else if($respuesta == "error"){

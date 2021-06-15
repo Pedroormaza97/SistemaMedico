@@ -36,13 +36,14 @@
     
     static public function mdlIngresarUsuario($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`nombre`, `usuario`, `password`, `perfil`) VALUES (:nombre, :usuario, :password, :perfil); ");
+    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`userUsuario`,`passUsuario`, `rol_idrol`, `cedulaP`) VALUES (:userUsuario, :passUsuario, :rol_idrol, :cedulaP); ");
     
 
-    $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-    $stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
-    $stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
-    $stmt->bindParam(":perfil", $datos["perfil"], PDO::PARAM_STR);
+    $stmt->bindParam(":userUsuario", $datos["arr_usuario"], PDO::PARAM_STR);
+    $stmt->bindParam(":passUsuario", $datos["arr_password"], PDO::PARAM_STR);
+    $stmt->bindParam(":rol_idrol", $datos["arr_rol"], PDO::PARAM_STR);
+    $stmt->bindParam(":cedulaP", $datos["arr_cedulap"], PDO::PARAM_STR);
+    //$stmt->bindParam(":estado", $datos["arr_estado"], PDO::PARAM_STR);
   
 
     if($stmt->execute()){

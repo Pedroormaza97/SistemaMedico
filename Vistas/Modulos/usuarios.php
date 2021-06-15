@@ -40,15 +40,11 @@
                                     <form class="" action="" method="post" novalidate>
                                         
                                         <span class="section">Personal Info</span>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevoNombre" data-validate-length-range="5,15" type="text" /></div>
-                                        </div>
+                                        
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Usuario<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevoUsuario"  required="required" />
+                                                <input class="form-control" name="nuevoUsuario"  required="required" type="text" />
                                             </div>
                                         </div>
                                         <div class="field item form-group">
@@ -68,9 +64,27 @@
                                                 <input class="form-control" type="password" name="password2" data-validate-linked='nuevoPassword' required='required' /></div>
                                         </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Perfil<span class="required">*</span></label>
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Rol<span class="">*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                          <select class="form-control" Type="text" name="nuevoRol">
+                                            <option>Opciones...</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Cedula<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevoPerfil"  type="text" /></div>
+                                                <input class="form-control" name="nuevaCedulap"  type="text" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">estado<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <label>
+                                                <input class="form-control" type="checkbox" name="nuevoEstado" class="js-switch" checked="Activo" unchecked="inactivo"/> Activo
+                                              </label></div>
                                         </div>
                                         
                                             
