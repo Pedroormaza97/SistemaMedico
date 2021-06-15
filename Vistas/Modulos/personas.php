@@ -56,17 +56,17 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Apellido paterno<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevoApellidop" data-validate-length-range="5,15" type="text" /></div>
+                                                <input class="form-control"  name="nuevoApellidop" type="text" /></div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Apellido materno<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevoApellidom" data-validate-length-range="5,15" type="text" /></div>
+                                                <input class="form-control"  name="nuevoApellidom" type="text" /></div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Dirección/Domicilio<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevaDireccion" data-validate-length-range="5,15" type="text" /></div>
+                                                <input class="form-control"  name="nuevaDireccion" type="text" /></div>
                                         </div>
                                         <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Sexo<span class="required">*</span></label>
@@ -81,28 +81,28 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Etnia<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevaEtnia"  required="required" />
+                                                <input class="form-control" name="nuevaEtnia" />
                                             </div>
                                         </div>
 
                                         <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado civil<span class="required">*</span></label>
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado civil<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="nuevoEstadocivil" required="required">
+                                          <select class="form-control" name="nuevoEstadocivil">
                                             <option>Opciones...</option>
-                                            <option>Soltero</option>
-                                            <option>Casado</option>
-                                            <option>Divorciado</option>
+                                            <option>Soltero (a)</option>
+                                            <option>Casado (a)</option>
+                                            <option>Divorciado (a)</option>
                                             <option>Union Libre</option>
-                                            <option>Viudo</option>
+                                            <option>Viudo (a)</option>
                                           </select>
                                         </div>
                                       </div>
                                       <div class="field item form-group">
-                                      <label class="col-form-label col-md-3 col-sm-3 label-align">Fecha de Nacimiento<span class="required">*</span>
+                                      <label class="col-form-label col-md-3 col-sm-3 label-align">Fecha de Nacimiento<span class="">*</span>
                                       </label>
                                       <div class="col-md-6 col-sm-6 ">
-                                        <input id="nuevaFechaNacimiento" name="nuevaFechaNacimiento" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
+                                        <input id="nuevaFechaNacimiento" name="nuevaFechaNacimiento" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
                                           onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
                                         <script>
                                           function timeFunctionLong(input) {
@@ -114,9 +114,9 @@
                                       </div>
                                     </div>
                                     <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Tipo de Sangre<span class="required">*</span></label>
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Tipo de Sangre<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="nuevoTiposangre" required="required">
+                                          <select class="form-control" name="nuevoTiposangre" >
                                             <option>Opciones...</option>
                                             <option>O+</option>
                                             <option>O-</option>
@@ -132,36 +132,37 @@
                                       </div>
 
                                         
-                                      
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Hijos varones<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Hijos varones <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevoHijosvarones"  type="number" /></div>
+                                                <input class="form-control" type="number" class='number' name="nuevosHijosvarones" ></div>
                                         </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Hijas mujeres<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Hijas mujeres <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevasHijasmujeres"  type="number" /></div>
+                                                <input class="form-control" type="number" class='number' name="nuevasHijasmujeres" ></div>
                                         </div>
+                                        
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Tabaquismo<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevoTabaquismo"  type="text" /></div>
+                                                <input class="form-control" name="nuevoTabaquismo" />
+                                            </div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Ocupacion<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevaOcupacion"  type="text" /></div>
+                                                <input class="form-control"  name="nuevaOcupacion"  type="text" /></div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Cargo<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevoCargo"  type="text" /></div>
+                                                <input class="form-control"  name="nuevoCargo"  type="text" /></div>
                                         </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Id pareja<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Id pareja <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="nuevoIdpareja"  type="number" /></div>
+                                                <input class="form-control" type="number" class='number' name="nuevoIdpareja" ></div>
                                         </div>
                                         
                                         
