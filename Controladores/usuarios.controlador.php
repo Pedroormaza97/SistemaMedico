@@ -47,9 +47,12 @@ class ControladorUsuarios{
           /*
           VALIDACION DE IMAGEN
           */
+
+          $ruta = "";
+
           if(isset($_FILES["nuevaFoto"]["tmp_name"])){
             list($ancho, $alto) = getimagesize($_FILES["nuevaFoto"]["tmp_name"]);
-            var_dump(getimagesize($_FILES["nuevaFoto"]["tmp_name"]));
+        
             $nuevoAncho = 500;
             $nuevoAlto = 500;
 
@@ -58,59 +61,86 @@ class ControladorUsuarios{
             $directorio = "vistas/img/usuarios/".$_POST["nuevoUsuario"];
             mkdir($directorio, 0777);
 
+            //DE ACUERDO A EL TIPO DE IMAGEN ES EL METODO DE INGRESO
 
+            //SI LA IMAGEN ES JPG
+            if($_FILES["nuevaFoto"]["type"] == "image/jpeg"){
+
+              //GUARDANDO LA IMAGEN EN EL DIRECTORIO
+              $aleatorio = mt_rand(100,999);
+              $ruta = "vistas/img/usuarios/".$_POST["nuevoUsuario"]."/".$aleatorio.".jpg";
+              $origen = imagecreatefromjpeg($_FILES["nuevaFoto"]["tmp_name"]);
+              $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+              imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+              imagejpeg($destino, $ruta);
+
+            }
+
+            //SI LA IMAGEN ES PNG
+            if($_FILES["nuevaFoto"]["type"] == "image/PNG"){
+
+              //GUARDANDO LA IMAGEN EN EL DIRECTORIO
+              $aleatorio = mt_rand(100,999);
+              $ruta = "vistas/img/usuarios/".$_POST["nuevoUsuario"]."/".$aleatorio.".png";
+              $origen = imagecreatefrompng($_FILES["nuevaFoto"]["tmp_name"]);
+              $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+              imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+              imagepng($destino, $ruta);
+
+            }
 
           }
 
-           // $tabla = "usuarios";
+           $tabla = "usuarios";
 
 
-           // $datos = array("arr_usuario" => $_POST["nuevoUsuario"],
-           //              "arr_password" => $_POST["nuevoPassword"],
-           //              "arr_rol" => $_POST["nuevoRol"],
-           //              "arr_cedulap" => $_POST["nuevaCedulap"],
-           //              "arr_estado" => $_POST["nuevoEstado"]);
+           $datos = array("arr_usuario" => $_POST["nuevoUsuario"],
+                        "arr_password" => $_POST["nuevoPassword"],
+                        "arr_rol" => $_POST["nuevoRol"],
+                        "arr_cedulap" => $_POST["nuevaCedulap"],
+                        "arr_rutaImg" => $ruta,
+                        "arr_estado" => $_POST["nuevoEstado"]);
           
 
-           // $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
+           $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
 
-           // if($respuesta == "ok"){
+           if($respuesta == "ok"){
             
-           //  echo '<script> 
-           //  Swal.fire({
-           //  title: "Confirmacion!",
-           //  text: "Los datos del nuevo usuario fueron ingresados.",
-           //  icon: "success",
-           // confirmButtonText: "Ok"}).then((result)=>{
+            echo '<script> 
+            Swal.fire({
+            title: "Confirmacion!",
+            text: "Los datos del nuevo usuario fueron ingresados.",
+            icon: "success",
+           confirmButtonText: "Ok"}).then((result)=>{
 
-           //  if(result.value){
-           //    window.location = "usuarios";
-           //  }
+            if(result.value){
+              window.location = "usuarios";
+            }
 
 
-           //  });
-           //  </script>';
+            });
+            </script>';
 
             
           //ALGORITMO PARA FUTURAS COMPROBACIONES DE INGRESO A DE DATOS A LA BD 
-           // }else if($respuesta == "error"){
+           }else if($respuesta == "error"){
             
-           //  echo '<br><script> 
-           //  Swal.fire({
-           //  title: "Error!",
-           //  text: "No se pudieron ingresar los datos a la base de datos, intentelo denuevo.",
-           //  icon: "error",
-           // confirmButtonText: "Ok"}).then((result)=>{
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "No se pudieron ingresar los datos a la base de datos, intentelo denuevo.",
+            icon: "error",
+           confirmButtonText: "Ok"}).then((result)=>{
 
-           //  if(result.value){
-           //    window.location = "usuarios";
-           //  }
+            if(result.value){
+              window.location = "usuarios";
+            }
 
 
-           //  });
-           //  </script>';
+            });
+            </script>';
 
-           // }
+           //}
             
            
 
@@ -141,5 +171,6 @@ class ControladorUsuarios{
        }
 
    }
+ }
  
 
