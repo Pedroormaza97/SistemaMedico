@@ -24,6 +24,7 @@
             <div  class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" >
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
+                  <form class="" action="" method="post" enctype="multipart/form-data" novalidate>
                   <div class="x_content">
                   <!--MODAL HEADER-->
                   <div class="modal-header">
@@ -37,7 +38,7 @@
         
                       <!-- start form for validation -->
                       <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
+                                    
                                         
                                         <span class="section">Personal Info</span>
                                         
@@ -79,6 +80,18 @@
                                             <div class="col-md-6 col-sm-6">
                                                 <input class="form-control" name="nuevaCedulap"  type="text" /></div>
                                         </div>
+                                        <div class="field item form-group btn-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Foto de Perfil:<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input type="file" class="nuevaFoto" name="nuevaFoto" id="nuevaFoto"> 
+                                                <p class="help-block">Peso maximo 2 MB</p>
+                                                <img src="vistas/img/usuarios/imguser.png" class="img-thumbnail previsualizar" width="100px"></div>
+
+
+                                        </div>
+
+
+
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">estado<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
@@ -97,40 +110,35 @@
 
                                                
                                            
-                                             
-                                    </form>
-                                              
-
-                                </div>
-
-
-                        </div>
-
-
+                                           </div>  
+                                        </div>
+                                    
+                                        
                     <!--MODAL FOOTER-->
                   <div class="modal-footer">
 
-                    <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-
-                    
+                    <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>  
                 </div>
 
 
 
-              </div>
 
               </div>
+              <?php
+                                             $crearUsuario = new ControladorUsuarios();
+                                             $crearUsuario -> ctrCrearUsuario();
+
+                                                ?>
+
+              </form>
 
                   
             </div>
            
 
         </div>
-        <?php
-                                             $crearUsuario = new ControladorUsuarios();
-                                             $crearUsuario -> ctrCrearUsuario();
-
-                                                ?>
+      </div>
+        
 
 
           <!--TABLA DE USUARIOS-->

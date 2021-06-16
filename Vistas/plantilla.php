@@ -60,6 +60,8 @@ session_start();
     <link href="vistas/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
     <link href="vistas/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
     <link href="vistas/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+     <!--SweetAle -->
+    <script src="vistas/vendors/sweetalert2/sweetalert2.all.min.js"></script> 
     <!-- Custom Theme Style -->
     <link href="vistas/build/css/custom.css" rel="stylesheet">
   </head>
@@ -125,6 +127,7 @@ session_start();
     <script src="vistas/vendors/nprogress/nprogress.js"></script>
     <!-- Chart.js -->
     <script src="vistas/vendors/Chart.js/dist/Chart.min.js"></script>
+
 
     <!-- gauge.js -->
     <script src="vistas/vendors/gauge.js/dist/gauge.min.js"></script>
@@ -193,13 +196,12 @@ session_start();
     <script src="vistas/vendors/jszip/dist/jszip.min.js"></script>
     <script src="vistas/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="vistas/vendors/pdfmake/build/vfs_fonts.js"></script> 
-    <!--SweetAle -->
-    <script src="vistas/vendors/sweetAlert2/sweetalert2.all.min.js"></script> 
+   
 
     <!-- Custom Theme Scripts -->
     <script src="vistas/build/js/custom.js"></script>
 
-    <!--<script src="vistas/js/plantilla.js"></script>-->
+    <script src="vistas/js/usuarios.js"></script>
         </div>
       </div>
       

@@ -31,22 +31,39 @@ class ControladorPersonas{
            $respuesta = ModeloPersonas::mdlCrearPersonas($tabla, $datos);
 
            if($respuesta == "ok"){
-            echo '<br><div class="alert alert-succes">CORRECTO!!!!</div>';
-            //echo '<script>
+            echo '<script> 
+            Swal.fire({
+            title: "Confirmacion!",
+            text: "Los datos de la nueva persona fueron ingresados.",
+            icon: "success",
+           confirmButtonText: "Ok",
+           closeOnConfirm: false}).then((result)=>{
 
-              //window.location = "personas";
+            if(result.value){
+              window.location = "personas";
+            }
 
-            //</script>';
+
+            });
+            </script>';
 
 
            }else if($respuesta == "error"){
-            echo '<br><div class="alert alert-succes">No se ingresaron los datos a la BD</div>';
-            //echo '<script>
+             echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "No se pudieron ingresar los datos a la base de datos, intentelo denuevo.",
+            icon: "error",
+           confirmButtonText: "Ok",
+           closeOnConfirm: false}).then((result)=>{
 
-              //window.location = "personas";
+            if(result.value){
+              window.location = "personas";
+            }
 
-            //</script>';
 
+            });
+            </script>';
            }
             
            
@@ -54,19 +71,21 @@ class ControladorPersonas{
          
 
           }else{
-            echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
-            /*echo '<br><script> 
-            Swall.fire(
-            "Error!",
-            "You clicked the button!",
-           "success").then((result)=>{
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "Usted ha ingresado caracteres especiales no permitidos.",
+            icon: "error",
+           confirmButtonText: "Ok",
+           closeOnConfirm: false}).then((result)=>{
 
             if(result.value){
-              window.location = "usuarios"
+              window.location = "personas";
             }
 
-           })
-            </script>';*/
+
+            });
+            </script>';
 
 
           }

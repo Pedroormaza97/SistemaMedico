@@ -24,6 +24,7 @@
             <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" >
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
+                  <form class="" action="" method="post" novalidate>
                   <div class="x_content">
                   <!--MODAL HEADER-->
                   <div class="modal-header">
@@ -37,7 +38,7 @@
         
                       <!-- start form for validation -->
                       <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
+                                    
                                         
                                         <span class="section">Informacion de la persona</span>
 
@@ -171,12 +172,6 @@
                                                 </div>
                                             
 
-                                              
-
-                                           
-                                             
-                                    </form>
-                                              
 
                                 </div>
 
@@ -188,26 +183,23 @@
                   <div class="modal-footer">
 
                     <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-
-                    
+                   </div>
+                
                 </div>
-
-
-
-              </div>
-
-              </div>
-
-                  
-            </div>
-           
-
-        </div>
-        <?php
+                <?php
                                              $crearPersona = new ControladorPersonas();
                                              $crearPersona -> ctrCrearPersona();
 
                                                 ?>
+
+              </form>
+
+                  
+            </div>
+           
+            </div>
+        </div>
+        
 
 
           <!--TABLA DE USUARIOS-->
