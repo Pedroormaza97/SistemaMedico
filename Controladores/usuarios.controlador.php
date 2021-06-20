@@ -8,6 +8,9 @@ class ControladorUsuarios{
       if(isset($_POST["ingUsuario"])){
         if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
   			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["password"])){
+
+          $encriptar = crypt($_POST["password"], '$2a$07$usesomesillystringforsalt$');
+
            $tabla = "usuarios";
 
            $item = "userUsuario";
@@ -15,11 +18,15 @@ class ControladorUsuarios{
 
            $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
-          if($respuesta["userUsuario"] == $_POST["ingUsuario"] && $respuesta["passUsuario"] == $_POST["password"]){
+          if($respuesta["userUsuario"] == $_POST["ingUsuario"] && $respuesta["passUsuario"] == $encriptar){
 
              //echo '<div class="alert -success">Bienvenido al Sistema</div>';
             $_SESSION["iniciarsesion"] = "ok";
+            $_SESSION["idUsuario"] = $respuesta["idUsuario"];
             $_SESSION["nombreUsuario"] = $respuesta["userUsuario"];
+            $_SESSION["rol"] = $respuesta["rol_idrol"];
+            $_SESSION["fotoUsuario"] = $respuesta["FotoPerfilUsuario"];
+            
 
             echo '<script>
 
@@ -28,7 +35,17 @@ class ControladorUsuarios{
             </script>';
 
            }else{
-             echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
+             
+             echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "Error al ingresar, vuelve a intentarlo.",
+            icon: "error",
+           confirmButtonText: "Ok"
+
+
+            });
+            </script>';
            }
          }
        }
@@ -93,9 +110,11 @@ class ControladorUsuarios{
 
            $tabla = "usuarios";
 
+           $encriptar = crypt($_POST["nuevoPassword"], '$2a$07$usesomesillystringforsalt$');
+
 
            $datos = array("arr_usuario" => $_POST["nuevoUsuario"],
-                        "arr_password" => $_POST["nuevoPassword"],
+                        "arr_password" => $encriptar,
                         "arr_rol" => $_POST["nuevoRol"],
                         "arr_cedulap" => $_POST["nuevaCedulap"],
                         "arr_rutaImg" => $ruta,

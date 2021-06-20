@@ -129,9 +129,19 @@
           <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
             
 
+            <?php
+            if($_SESSION["fotoUsuario"] != ""){
 
+              echo '<img src="'.$_SESSION["fotoUsuario"].'" alt="">';
+            }else{
+              echo '<img src="vistas/img/usuarios/imguser.png" alt="">';
+
+            }
+
+
+            ?>
             
-            <img src="vistas/img/usuarios/imguser.png" alt=""><?php echo $_SESSION["nombreUsuario"];?>
+            <spam class="hidden-xs"><?php echo $_SESSION["nombreUsuario"];?></spam>
           </a>
           <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item"  href="javascript:;"> Profile</a>
