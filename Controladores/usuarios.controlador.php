@@ -222,7 +222,7 @@ class ControladorUsuarios{
 
           $ruta = $_POST["fotoActual"];
 
-          if(isset($_FILES["editarFoto"]["tmp_name"])){
+          if(isset($_FILES["editarFoto"]["tmp_name"]) && !empty($_FILES["editarFoto"]["tmp_name"])){
             list($ancho, $alto) = getimagesize($_FILES["editarFoto"]["tmp_name"]);
         
             $nuevoAncho = 500;
@@ -308,12 +308,7 @@ class ControladorUsuarios{
 
        }
 
-       if($_POST["editarEstado"] == ""){
-
-            $_POST["editarEstado"] = "inactivo";
-
-
-           }
+       
 
 
 

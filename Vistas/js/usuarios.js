@@ -66,13 +66,14 @@ $(".btnEditarUsuario").click(function(){
 			$("#editarPerfil").val(respuesta["rol_idrol"]);
 			$("#fotoActual").val(respuesta["FotoPerfilUsuario"]);
 			$("#editarCedulap").val(respuesta["cedulaP"]);
+			$("#editarEstado").html(respuesta["Estado"]);
 			$("#editarEstado").val(respuesta["Estado"]);
 
 			
 			if(respuesta["FotoPerfilUsuario"] != ""){
 
 				$(".previsualizar").attr("src", respuesta["FotoPerfilUsuario"]);
-				
+
 			}
 
 			

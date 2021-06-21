@@ -175,16 +175,14 @@
 
                                         </div>
 
-                                        <div class="form-group row">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado:</label>
-                                        <div class="col-md-6 col-sm-6 ">
-                                          <div class="">
-                                            <label>
-                                              <input type="checkbox" name="nuevoEstado" class="js-switch" class="form-control" checked value="Activo"/> Activo
-                                            </label>
-                                          </div>
-                                          
-                                          
+                                       <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado<span class="">*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                          <select class="form-control" Type="text" name="nuevoEstado">
+                                            <option>Opciones...</option>
+                                            <option value="Activo">ACTIVO</option>
+                                            <option value="Inactivo">INACTIVO</option>
+                                          </select>
                                         </div>
                                       </div>
 
@@ -298,21 +296,18 @@
                                                 <input type="file" class="nuevaFoto" name="editarFoto"> 
                                                 <p class="help-block">Peso maximo 2 MB</p>
                                                 <img src="vistas/img/usuarios/imguser.png" class="img-thumbnail previsualizar" width="100px"></div>
-                                                <input type="hidden" class="form-control" name="fotoActual" id="fotoActual" value="">
-
+                                                <input type="hidden" name="fotoActual" id="fotoActual">
 
                                         </div>
 
-                                        <div class="form-group row">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado:</label>
-                                        <div class="col-md-6 col-sm-6 ">
-                                          <div class="">
-                                            <label>
-                                              <input type="checkbox" name="editarEstado" id="editarEstado" class="js-switch" class="form-control" checked value="Activo"/> Activo
-                                            </label>
-                                          </div>
-                                          
-                                          
+                                        <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado<span class="">*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                          <select class="form-control" Type="text" name="editarEstado">
+                                            <option value="" id="editarEstado"></option>
+                                            <option value="activo">activo</option>
+                                            <option value="Inactivo">inactivo</option>
+                                          </select>
                                         </div>
                                       </div>
                                         

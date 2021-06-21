@@ -76,6 +76,8 @@
     $stmt->bindParam(":cedulaP", $datos["arr_cedulap"], PDO::PARAM_STR);
     $stmt->bindParam(":foto", $datos["arr_rutaImg"], PDO::PARAM_STR);
     $stmt->bindParam(":estado", $datos["arr_estado"], PDO::PARAM_STR);
+
+    
   
 
     if($stmt->execute()){
