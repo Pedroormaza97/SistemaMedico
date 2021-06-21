@@ -61,8 +61,20 @@ $(".btnEditarUsuario").click(function(){
 		dataType: "json",
 		success: function(respuesta){
 			$("#editarUsuario").val(respuesta["userUsuario"]);
-			//$("#editarPassword").val(respuesta["passUsuario"]);
+			$("#passwordActual").val(respuesta["passUsuario"]);
 			$("#editarPerfil").html(respuesta["rol_idrol"]);
+			$("#editarPerfil").val(respuesta["rol_idrol"]);
+			$("#fotoActual").val(respuesta["FotoPerfilUsuario"]);
+			$("#editarCedulap").val(respuesta["cedulaP"]);
+
+			if(respuesta["FotoPerfilUsuario"] != ""){
+
+
+				$(".previsualizar").attr("src", respuesta["FotoPerfilUsuario"]);
+			}else{
+				$(".previsualizar").attr("src", "vistas/img/usuarios/imguser.png");
+
+			}
 			//$("#editarFotoPerfil").val(respuesta["FotoPerfilUsuario"]);
 			//$("#editarEstado").val(respuesta["Estado"]);
 

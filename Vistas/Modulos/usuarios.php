@@ -154,9 +154,9 @@
                                         <div class="col-md-6 col-sm-6">
                                           <select class="form-control" Type="text" name="nuevoRol">
                                             <option>Opciones...</option>
-                                            <option value="1">Administrador</option>
-                                            <option value="2">Medico</option>
-                                            <option value="3">Recepcionista</option>
+                                            <option value="1">1.- Administrador</option>
+                                            <option value="2">2.- Medico</option>
+                                            <option value="3">3.- Recepcionista</option>
                                           </select>
                                         </div>
                                       </div>
@@ -175,15 +175,19 @@
 
                                         </div>
 
-
-
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">estado<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <label>
-                                                <input class="form-control" type="checkbox" name="nuevoEstado" class="js-switch" checked="activo" unchecked="inactivo"/> Activo
-                                              </label></div>
+                                        <div class="form-group row">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado:</label>
+                                        <div class="col-md-6 col-sm-6 ">
+                                          <div class="">
+                                            <label>
+                                              <input type="checkbox" name="nuevoEstado" class="js-switch" class="form-control" checked value="Activo"/> Activo
+                                            </label>
+                                          </div>
+                                          
+                                          
                                         </div>
+                                      </div>
+
                                         
                                             
                                                 <div class="col-md-6 offset-md-3">
@@ -250,14 +254,15 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Usuario<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" id="editarUsuario" name="editarUsuario"  value="" required="required" type="text" />
+                                                <input class="form-control" id="editarUsuario" name="editarUsuario"  value="" readonly type="text" />
                                             </div>
                                         </div>
                                         <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">
                                         Editar Password<span class="required">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <input class="form-control" type="password" id="password1" name="editarPassword" pacheholder="Escriba la nueva contraseña" title="Minimum 5 Characters incluyendo mayusculas, minusculas y numeros" required />
+                                          <input type="password" class="form-control input-lg"  id="password1" name="editarPassword" pacheholder="Escriba la nueva contraseña" required />
+                                          <input type="hidden" id="passwordActual" name="passwordActual">
                                           
                                           <span style="position: absolute;right:15px;top:7px;" onclick="hideshow()" >
                                             <i id="slash" class="fa fa-eye-slash"></i>
@@ -275,9 +280,9 @@
                                         <div class="col-md-6 col-sm-6">
                                           <select class="form-control" Type="text" name="editarRol">
                                             <option value="" id="editarPerfil"></option>
-                                            <option value="1">Administrador</option>
-                                            <option value="2">Medico</option>
-                                            <option value="3">Recepcionista</option>
+                                            <option value="1">1.- Administrador</option>
+                                            <option value="2">2.- Medico</option>
+                                            <option value="3">3.- Recepcionista</option>
                                           </select>
                                         </div>
                                       </div>
@@ -285,27 +290,31 @@
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">
                                             Editar Cedula<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="editarCedulap" value=""type="text" /></div>
+                                                <input class="form-control" id="editarCedulap" name="editarCedulap" value="" readonly type="text" /></div>
                                         </div>
                                         <div class="field item form-group btn-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Cambiar Foto de Perfil:<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input type="file" class="nuevaFoto" name="nuevaFoto" id="nuevaFoto"> 
+                                                <input type="file" class="nuevaFoto" name="editarFoto" id="editarFoto"> 
                                                 <p class="help-block">Peso maximo 2 MB</p>
                                                 <img src="vistas/img/usuarios/imguser.png" class="img-thumbnail previsualizar" width="100px"></div>
+                                                <input type="hidden" name="fotoActual" id="fotoActual">
 
 
                                         </div>
 
-
-
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar el estado<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <label>
-                                                <input class="form-control" type="checkbox" name="editarEstado" class="js-switch" checked="activo" unchecked="inactivo"/> Activo
-                                              </label></div>
+                                        <div class="form-group row">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Estado:</label>
+                                        <div class="col-md-6 col-sm-6 ">
+                                          <div class="">
+                                            <label>
+                                              <input type="checkbox" name="editarEstado" class="js-switch" class="form-control" checked value="Activo"/> Activo
+                                            </label>
+                                          </div>
+                                          
+                                          
                                         </div>
+                                      </div>
                                         
                                             
                                                 <div class="col-md-6 offset-md-3">
@@ -331,11 +340,11 @@
 
 
               </div>
-              <!-- <?php
-                                             $crearUsuario = new ControladorUsuarios();
-                                             $crearUsuario -> ctrCrearUsuario();
+              <?php
+                                             $editarUsuario = new ControladorUsuarios();
+                                             $editarUsuario -> ctrEditarUsuario();
 
-                                                ?> -->
+                                                ?> 
 
               </form>
 
