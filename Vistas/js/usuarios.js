@@ -1,4 +1,4 @@
-/*SUBIENDO IMAGEN DEL USUARIO*/
+ /*SUBIENDO IMAGEN DEL USUARIO*/
 
 $(".nuevaFoto").change(function(){
 
@@ -22,7 +22,7 @@ $(".nuevaFoto").change(function(){
 		$(".nuevaFoto").val("");
 		Swal.fire({
             title: "Error!",
-            text: "La Imagen no debe pesar mas de 5 MB.",
+            text: "La Imagen no debe pesar mas de 2 MB.",
             icon: "error",
            confirmButtonText: "Ok"});
 		
@@ -66,17 +66,21 @@ $(".btnEditarUsuario").click(function(){
 			$("#editarPerfil").val(respuesta["rol_idrol"]);
 			$("#fotoActual").val(respuesta["FotoPerfilUsuario"]);
 			$("#editarCedulap").val(respuesta["cedulaP"]);
+			$("#editarEstado").val(respuesta["Estado"]);
 
+			
 			if(respuesta["FotoPerfilUsuario"] != ""){
 
-
 				$(".previsualizar").attr("src", respuesta["FotoPerfilUsuario"]);
-			}else{
-				$(".previsualizar").attr("src", "vistas/img/usuarios/imguser.png");
-
+				
 			}
+
+			
+			
+
+			
 			//$("#editarFotoPerfil").val(respuesta["FotoPerfilUsuario"]);
-			//$("#editarEstado").val(respuesta["Estado"]);
+			
 
 			console.log("respuesta", respuesta);
 

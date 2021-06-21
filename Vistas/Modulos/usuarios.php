@@ -168,7 +168,7 @@
                                         <div class="field item form-group btn-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Foto de Perfil:<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input type="file" class="nuevaFoto" name="nuevaFoto" id="nuevaFoto"> 
+                                                <input type="file" class="nuevaFoto" name="nuevaFoto"> 
                                                 <p class="help-block">Peso maximo 2 MB</p>
                                                 <img src="vistas/img/usuarios/imguser.png" class="img-thumbnail previsualizar" width="100px"></div>
 
@@ -295,10 +295,10 @@
                                         <div class="field item form-group btn-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Cambiar Foto de Perfil:<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input type="file" class="nuevaFoto" name="editarFoto" id="editarFoto"> 
+                                                <input type="file" class="nuevaFoto" name="editarFoto"> 
                                                 <p class="help-block">Peso maximo 2 MB</p>
                                                 <img src="vistas/img/usuarios/imguser.png" class="img-thumbnail previsualizar" width="100px"></div>
-                                                <input type="hidden" name="fotoActual" id="fotoActual">
+                                                <input type="hidden" class="form-control" name="fotoActual" id="fotoActual" value="">
 
 
                                         </div>
@@ -308,7 +308,7 @@
                                         <div class="col-md-6 col-sm-6 ">
                                           <div class="">
                                             <label>
-                                              <input type="checkbox" name="editarEstado" class="js-switch" class="form-control" checked value="Activo"/> Activo
+                                              <input type="checkbox" name="editarEstado" id="editarEstado" class="js-switch" class="form-control" checked value="Activo"/> Activo
                                             </label>
                                           </div>
                                           

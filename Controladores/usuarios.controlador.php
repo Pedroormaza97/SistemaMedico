@@ -212,7 +212,7 @@ class ControladorUsuarios{
     /**
    * EDITAR USUARIOS
    */
-    public function ctrEditarUsuario(){
+    static public function ctrEditarUsuario(){
 
       if(isset($_POST["editarUsuario"])){
 
@@ -230,8 +230,7 @@ class ControladorUsuarios{
 
             //CREAR DIRECTORIO DE LA IMAGEN
 
-            $directorio = "vistas/img/usuarios/".$_POST["EditarUsuario"];
-            mkdir($directorio, 0777);
+            $directorio = "vistas/img/usuarios/".$_POST["editarUsuario"];
 
 
             //PRIMERO VALIDAR SI EXISTE UNA IMAGEN EN LA BD
@@ -242,14 +241,12 @@ class ControladorUsuarios{
 
             }else{
 
-              mkdir($directorio, 0755);
+              mkdir($directorio, 0777);
 
             }
 
 
             //DE ACUERDO A EL TIPO DE IMAGEN ES EL METODO DE INGRESO
-
-
 
 
 
@@ -259,7 +256,7 @@ class ControladorUsuarios{
               //GUARDANDO LA IMAGEN EN EL DIRECTORIO
               $aleatorio = mt_rand(100,999);
               $ruta = "vistas/img/usuarios/".$_POST["editarUsuario"]."/".$aleatorio.".jpg";
-              $origen = imagecreatefromjpeg($_FILES["EditarFoto"]["tmp_name"]);
+              $origen = imagecreatefromjpeg($_FILES["editarFoto"]["tmp_name"]);
               $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
               imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
               imagejpeg($destino, $ruta);
