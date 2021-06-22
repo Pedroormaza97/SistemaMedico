@@ -29,13 +29,37 @@ class ControladorUsuarios{
             $_SESSION["nombreUsuario"] = $respuesta["userUsuario"];
             $_SESSION["rol"] = $respuesta["rol_idrol"];
             $_SESSION["fotoUsuario"] = $respuesta["FotoPerfilUsuario"];
-            
 
-            echo '<script>
+            //Registrar fecha y hora de el ultimo login
+
+            date_default_timezone_set('America/Guayaquil');
+            $fecha = date('Y-m-d');
+            $hora = date('H:i:s');
+
+            $fechaActual = $fecha.' '.$hora;
+
+            //$tabla = "usuarios";
+
+            $item1 = "ultimo_login";
+            $valor1 = "$fechaActual";
+
+            $item2 = "idUsuario";
+            $valor2 = $respuesta["idUsuario"];
+
+            $ultimoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
+
+            if($ultimoLogin == "ok"){
+
+              echo '<script>
 
               window.location = "inicio";
 
             </script>';
+
+
+
+            }  
+          
 
           }else{
             echo '<br><script> 
