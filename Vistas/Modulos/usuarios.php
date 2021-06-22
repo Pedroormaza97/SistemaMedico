@@ -1,4 +1,4 @@
-
+ 
   
 
 
@@ -74,8 +74,17 @@
                           }
 
                           
+                          if($value["Estado"] == "activo"){
+
+                            echo '<td><button class="btn btn-success btnActivar" idUsuario="'.$value["idUsuario"].'" estadoUsuario="inactivo">Activado</button></td>';
+                          }elseif ($value["Estado"] == "inactivo") {
+
+                            echo '<td><button class="btn btn-danger btnActivar" idUsuario="'.$value["idUsuario"].'" estadoUsuario="activo">Desactivado</button></td>';
+                            
+                          }
+                          
+
                           echo '
-                          <td><button class="btn btn-success">Activado</button></td>
                           <td>'.$value["ultimo_login"].'</td>
                           <td>
 

@@ -18,8 +18,11 @@ class ControladorUsuarios{
 
            $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
+
+
           if($respuesta["userUsuario"] == $_POST["ingUsuario"] && $respuesta["passUsuario"] == $encriptar){
 
+            if($respuesta["Estado"] == "activo"){
              //echo '<div class="alert -success">Bienvenido al Sistema</div>';
             $_SESSION["iniciarsesion"] = "ok";
             $_SESSION["idUsuario"] = $respuesta["idUsuario"];
@@ -34,12 +37,25 @@ class ControladorUsuarios{
 
             </script>';
 
+          }else{
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "El usuario '.$respuesta["userUsuario"].' esta desactivado.",
+            icon: "warning",
+           confirmButtonText: "Ok"
+
+
+            });
+            </script>';
+          }
+
            }else{
              
              echo '<br><script> 
             Swal.fire({
             title: "Error!",
-            text: "Error al ingresar, vuelve a intentarlo.",
+            text: "Error al ingresar las credenciales no son correctas, vuelve a intentarlo.",
             icon: "error",
            confirmButtonText: "Ok"
 

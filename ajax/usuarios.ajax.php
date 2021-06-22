@@ -21,12 +21,38 @@ public function ajaxEditarUsuario(){
 
 
 
+	}
+
+
+//ACTIVAR USUARIO
+
+	public $activarId;
+	public $activarUsuario;
+	
+
+	public function ajaxActivarUsuario(){
+
+		$tabla = "usuarios";
+
+		$item1 ="Estado";
+		$valor1 = $this->activarUsuario;
+
+		$item2 ="idUsuario";
+		$valor2 = $this->activarId;
+
+
+
+
+		$respuesta = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
+
+		
+
 
 	}
 
 
 }
-
+//****************************************************************
 /**
  * EDITAR USUARIO
  */
@@ -38,3 +64,20 @@ $editar -> ajaxEditarUsuario();
 
 
 }
+
+
+/**
+ * ACTIVAR USUARIO
+ */
+
+if(isset($_POST["activarUsuario"])){
+
+	$activarUsuario = new ajaxUsuarios();
+	$activarUsuario -> activarUsuario = $_POST["activarUsuario"];
+	$activarUsuario -> activarId = $_POST["activarId"];
+	$activarUsuario -> ajaxActivarUsuario();
+
+
+
+}
+

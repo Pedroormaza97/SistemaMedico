@@ -100,3 +100,62 @@ $(".btnEditarUsuario").click(function(){
 
 })
 
+
+
+//ACTIVAR USUARIO
+$(".btnActivar").click(function(){
+
+	var idUsuario = $(this).attr("idUsuario");
+	var estadoUsuario = $(this).attr("estadoUsuario");
+
+
+
+	var datos = new FormData();
+	datos.append("activarId", idUsuario);
+	datos.append("activarUsuario", estadoUsuario);
+
+	$.ajax({
+
+		url:"ajax/usuarios.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		success: function(respuesta){
+
+			console.log("respuesta", respuesta);
+
+		}
+
+
+	})
+
+	if(estadoUsuario == "inactivo"){
+
+		$(this).removeClass('btn-success');
+		$(this).addClass('btn-danger');
+		$(this).html("Desactivado");
+		$(this).attr('estadoUsuario', "activo");
+
+	}else{
+		$(this).removeClass('btn-danger');
+		$(this).addClass('btn-success');
+		$(this).html("Activado");
+		$(this).attr('estadoUsuario', "inactivo");
+
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+})
