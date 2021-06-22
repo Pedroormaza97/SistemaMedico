@@ -92,5 +92,133 @@ class ControladorPersonas{
 
           
          }
-       }
+       }//llave de metodo
+
+
+       /**
+   * MOSTRAR USUARIOS
+   */
+    static public function ctrMostrarPersona($item, $valor){
+      $tabla = "persona";
+
+      $respuesta = ModeloPersonas::mdlMostrarPersonas($tabla, $item, $valor);
+
+      return $respuesta;
+
+
     }
+
+     /**
+   * EDITAR USUARIOS
+   */
+    static public function ctrEditarPersona(){
+
+      if(isset($_POST["editarCedula"])){
+        if(preg_match('/^[a-zA-Z0-9 ]+$/', $_POST["editarNombre"]) &&
+          preg_match('/^[a-zA-Z0-9 ]/', $_POST["editarApellidop"])  &&
+           preg_match('/^[a-zA-Z0-9 ]+$/', $_POST["editarApellidom"])){
+
+
+
+        $tabla = "persona";
+
+
+
+       $datos = array("arr_cedula" => $_POST["editarCedula"],
+                        "arr_nombre" => $_POST["editarNombre"],
+                        "arr_Apellidop" => $_POST["editarApellidop"],
+                        "arr_Apellidom" => $_POST["editarApellidom"],
+                        "arr_Direccion" => $_POST["editarDireccion"],
+                        "arr_Sexo" => $_POST["editarSexo"],
+                        "arr_Etnia" => $_POST["editarEtnia"],
+                        "arr_Estadocivil" => $_POST["editarEstadocivil"],
+                        "arr_FechaNacimiento" => $_POST["editarFechaNacimiento"],
+                        "arr_Tiposangre" => $_POST["editarTiposangre"],
+                        "arr_Hijosvarones" => $_POST["editarHijosvarones"],
+                        "arr_Hijasmujeres" => $_POST["editarHijasmujeres"],
+                        "arr_Tabaquismo" => $_POST["editarTabaquismo"],
+                        "arr_Ocupacion" => $_POST["editarOcupacion"],
+                        "arr_Cargo" => $_POST["editarCargo"],
+                        "arr_rIdpareja" => $_POST["editarrIdpareja"]);
+
+       $respuesta = ModeloPersonas::mdlEditarPersona($tabla, $datos);
+
+       
+
+       if($respuesta == "ok"){
+            
+            echo '<script> 
+            Swal.fire({
+            title: "Confirmacion!",
+            text: "El Usuario a sido modificado correctamente.",
+            icon: "success",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "personas";
+            }
+
+
+            });
+            </script>';
+
+             
+           }else if($respuesta == "error"){
+            
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "No se pudieron modificar los datos en la base de datos, intentelo denuevo.",
+            icon: "error",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "personas";
+            }
+
+
+            });
+            </script>';
+
+           
+            
+
+
+          }
+       
+
+        
+
+
+
+
+      
+
+     }else{
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "Usted ha ingresado caracteres especiales no permitidos.",
+            icon: "error",
+           confirmButtonText: "Ok",
+           closeOnConfirm: false}).then((result)=>{
+
+            if(result.value){
+              window.location = "personas";
+            }
+
+
+            });
+            </script>';
+
+
+          }
+
+    }
+  }
+
+
+
+
+
+    }// llave de clase

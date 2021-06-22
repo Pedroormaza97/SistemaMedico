@@ -202,6 +202,7 @@ session_start();
     <script src="vistas/build/js/custom.js"></script>
 
     <script src="vistas/js/usuarios.js"></script>
+    <script src="vistas/js/personas.js"></script>
         </div>
       </div>
       
