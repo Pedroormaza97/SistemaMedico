@@ -119,9 +119,6 @@ $("#cedulaUsuario").change(function(){
 
 			if(respuesta){
 
-				
-
-
 
 				
 				$("#nombreUsuario").val(respuesta["0"]);
@@ -151,7 +148,55 @@ $("#cedulaUsuario").change(function(){
 
 
 
+//Comprobar si el usaurio ya existe
 
+$("#cedulaUsuario").change(function(){
+
+	var cedula =$(this).val();
+
+	var datos = new FormData();
+
+	datos.append("validarUsuario", cedula);
+
+	$.ajax({
+
+		url:"ajax/personas.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType: "json",
+		success:function(respuesta1){
+
+			console.log("respuesta1", respuesta1);
+
+			var user = respuesta1["0"];
+
+			 if(respuesta1){
+
+				$("#cedulaUsuario").before('<br><script> Swal.fire({ title: "Error!",text: "La cedula ingresada ya pertenece al usuario: '+user+'",icon: "error",confirmButtonText: "Ok"});</script>');
+				
+				
+           		 
+            
+
+			 	$("#cedulaUsuario").val("");
+			 	$("#nombreUsuario").val("");
+
+
+			 }
+
+
+		}
+
+
+
+	})
+
+
+
+})
 
 
 

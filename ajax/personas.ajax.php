@@ -2,6 +2,9 @@
 
 require_once "../controladores/personas.controlador.php";
 require_once "../modelos/personas.modelo.php";
+require_once "../controladores/usuarios.controlador.php";
+require_once "../modelos/usuarios.modelo.php";
+
 
 
 class ajaxPersonas{
@@ -27,7 +30,7 @@ public function ajaxEditarPersona(){
 
 
 /**
- * VALIDAR CEDULA
+ * VALIDAR CEDULA EN FORMULARIO PERSONA
  */
 
 public $validarCedula;
@@ -45,7 +48,7 @@ public function ajaxValidarCedula(){
 
 
 /**
- * VALIDAR CEDULA
+ * VALIDAR CEDULA EN FORMULARIO USUARIO
  */
 
 public $validarCedulaUsuario;
@@ -57,6 +60,23 @@ public function ajaxCrearNombreUsuario(){
 	$respuesta = ControladorPersonas::ctrCrearNombreUsuario($item,$valor);
 
 	echo json_encode($respuesta);
+
+
+}
+
+/**
+ * VALIDAR CEDULA EN FORMULARIO USUARIO
+ */
+
+public $validarUsuario;
+
+public function ajaxValidarUsuario(){
+
+	$item = "cedulaP";
+	$valor = $this->validarUsuario;
+	$respuesta1 = ControladorUsuarios::ctrValidarUsuario($item,$valor);
+
+	echo json_encode($respuesta1);
 
 
 }
@@ -96,8 +116,18 @@ if(isset($_POST["validarCedula"])){
  */
 if(isset($_POST["validarCedulaUsuario"])){
 
-	$valCedula = new ajaxPersonas();
-	$valCedula -> validarCedulaUsuario = $_POST["validarCedulaUsuario"];
-	$valCedula -> ajaxCrearNombreUsuario();
+	$valCedulaNomUser = new ajaxPersonas();
+	$valCedulaNomUser -> validarCedulaUsuario = $_POST["validarCedulaUsuario"];
+	$valCedulaNomUser -> ajaxCrearNombreUsuario();
+
+}
+/**********************************************************************
+ * EDITAR USUARIO
+ */
+if(isset($_POST["validarUsuario"])){
+
+	$valCedulaUser = new ajaxPersonas();
+	$valCedulaUser -> validarUsuario = $_POST["validarUsuario"];
+	$valCedulaUser -> ajaxValidarUsuario();
 
 }

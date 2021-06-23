@@ -127,6 +127,26 @@
 
   }
 
+  //MODELO VALIDAR USUARRIO
+
+  static public function mdlValidarUsuarios($tabla, $item, $valor){
+
+   
+
+     $stmt = Conexion::conectar()->prepare("SELECT `userUsuario` FROM $tabla WHERE $item = :$item");
+
+     $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+     $stmt -> execute();
+
+     return $stmt -> fetch();
+
+
+   $stmt -> close();
+
+   $stmt = null;
+   }
+
 
 
 

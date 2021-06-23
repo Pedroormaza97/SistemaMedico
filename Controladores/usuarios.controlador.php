@@ -250,6 +250,20 @@ class ControladorUsuarios{
     }
 
     /**
+   * MOSTRAR USUARIOS
+   */
+    static public function ctrValidarUsuario($item, $valor){
+
+      $tabla = "usuarios";
+
+      $respuesta = ModeloUsuarios::mdlValidarUsuarios($tabla, $item, $valor);
+      return $respuesta;
+
+
+
+    }
+
+    /**
    * EDITAR USUARIOS
    */
     static public function ctrEditarUsuario(){

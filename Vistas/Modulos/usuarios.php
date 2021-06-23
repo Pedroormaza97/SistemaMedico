@@ -200,7 +200,7 @@
                                         
                                             
                                                 <div class="col-md-6 offset-md-3">
-                                                    <button type='submit' class="btn btn-primary">Submit</button>
+                                                    <button type='submit' class="btn btn-primary btnNuevoUsuario">Submit</button>
                                                     <button type='reset' class="btn btn-success">Reset</button>
                                                     
                                                 </div>
@@ -223,8 +223,8 @@
 
               </div>
               <?php
-                                             $crearUsuario = new ControladorUsuarios();
-                                             $crearUsuario -> ctrCrearUsuario();
+                                             //$crearUsuario = new ControladorUsuarios();
+                                            // $crearUsuario -> ctrCrearUsuario();
 
                                                 ?>
 
