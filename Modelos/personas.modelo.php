@@ -34,6 +34,32 @@ require_once "conexion.php";
    $stmt = null;
    }
 
+   //CREAR NOMBRE DE USUARIO A PARTIR DE LA CEDULA DE LA PERSONA
+
+   static public function mdlCrearNombreUsuario($tabla, $item, $valor){
+
+   
+
+     $stmt = Conexion::conectar()->prepare("SELECT  CONCAT(LOWER(LEFT(`nombre`, 1)), LOWER(`apellido_p`), substring(`cedula`,7)) FROM $tabla WHERE $item = :$item;");
+
+     $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+
+     $stmt -> execute();
+
+     return $stmt -> fetch();
+
+   $stmt -> close();
+
+   $stmt = null;
+   }
+
+
+
+
+
+
+
 
    //CREAR PERSONAS
 

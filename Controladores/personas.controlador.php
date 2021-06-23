@@ -107,6 +107,22 @@ class ControladorPersonas{
 
 
     }
+    /**
+   * CREAR NOMBRE DE USUARIO
+   */
+
+
+    static public function ctrCrearNombreUsuario($item, $valor){
+      $tabla = "persona";
+
+      $respuesta = ModeloPersonas::mdlCrearNombreUsuario($tabla, $item, $valor);
+
+      return $respuesta;
+
+
+    }
+
+
 
      /**
    * EDITAR USUARIOS

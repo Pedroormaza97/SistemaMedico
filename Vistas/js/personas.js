@@ -38,15 +38,6 @@ $(".btnEditarPersona").click(function(){
 
 	 		
 
-	 		
-	 		
-
-	 		
-	 		
-
-	 		
-
-	 		console.log("respuesta", respuesta);
 
 
 	 		}
@@ -59,25 +50,136 @@ $(".btnEditarPersona").click(function(){
 })
 	
 	
-	// 		$("#editarPerfil").html(respuesta["rol_idrol"]);
-	// 		$("#editarPerfil").val(respuesta["rol_idrol"]);
-	// 		$("#fotoActual").val(respuesta["FotoPerfilUsuario"]);
-	// 		$("#editarCedulap").val(respuesta["cedulaP"]);
-	// 		$("#editarEstado").html(respuesta["Estado"]);
-	// 		$("#editarEstado").val(respuesta["Estado"]);
+/*
 
-			
-	// 		if(respuesta["FotoPerfilUsuario"] != ""){
+REVISAR SI LA CEDULA YA ESTA INGRESADA
+*/	
 
-	// 			$(".previsualizar").attr("src", respuesta["FotoPerfilUsuario"]);
+$("#nuevaCedula").change(function(){
 
-	// 		}
+	var cedula =$(this).val();
 
-			
-			
+	var datos = new FormData();
 
-			
-	// 		//$("#editarFotoPerfil").val(respuesta["FotoPerfilUsuario"]);
+	datos.append("validarCedula", cedula);
+
+	$.ajax({
+
+		url:"ajax/personas.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType: "json",
+		success:function(respuesta){
+
+			if(respuesta){
+
+				$("#nuevaCedula").before('<script> Swal.fire({ title: "Error!",text: "La cedula ingresada ya existe en la base de datos.",icon: "error",confirmButtonText: "Ok"});</script>');
+
+
+
+				$("#nuevaCedula").val("");
+
+
+			}
+
+
+		}
+
+
+
+	})
+
+
+
+})
+
+$("#cedulaUsuario").change(function(){
+
+	var cedula =$(this).val();
+
+	var datos = new FormData();
+
+	datos.append("validarCedulaUsuario", cedula);
+
+	$.ajax({
+
+		url:"ajax/personas.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType: "json",
+		success:function(respuesta){
+
+			console.log("respuesta", respuesta);
+
+			if(respuesta){
+
+				
+
+
+
+				
+				$("#nombreUsuario").val(respuesta["0"]);
+
+
+				//aqui se inserta el valor del usuario en la caja de texto
+
+			}else{
+
+
+				$("#cedulaUsuario").before('<script> Swal.fire({ title: "Alerta!",text: "La cedula ingresada no existe en la base de datos, por lo cual no podrá crear el usuario.",icon: "warning",confirmButtonText: "Ok"});</script>');
+				$("#cedulaUsuario").val("");
+				$("#nombreUsuario").val("");
+
+			}
+
+
+		}
+
+
+
+	})
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			
 
 	 		

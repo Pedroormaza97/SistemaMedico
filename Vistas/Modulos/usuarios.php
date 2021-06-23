@@ -135,11 +135,17 @@
                                     
                                         
                                         <span class="section">Personal Info</span>
+
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Cedula<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" name="nuevaCedulap"  id="cedulaUsuario" type="text" /></div>
+                                        </div>
                                         
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Usuario<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevoUsuario"  required="required" type="text" />
+                                                <input class="form-control" name="nuevoUsuario" id="nombreUsuario" readonly required="required" type="text" />
                                             </div>
                                         </div>
                                         <div class="field item form-group">
@@ -169,11 +175,7 @@
                                           </select>
                                         </div>
                                       </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Cedula<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevaCedulap"  type="text" /></div>
-                                        </div>
+                                        
                                         <div class="field item form-group btn-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Foto de Perfil:<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">

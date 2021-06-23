@@ -46,7 +46,7 @@ $(".nuevaFoto").change(function(){
 
 $(".btnEditarUsuario").click(function(){
 	var idUsuario = $(this).attr("idUsuario");
-	console.log("idUsuario", idUsuario);
+	
 
 	var datos = new FormData();
 	datos.append("idUsuario", idUsuario);
@@ -83,7 +83,7 @@ $(".btnEditarUsuario").click(function(){
 			//$("#editarFotoPerfil").val(respuesta["FotoPerfilUsuario"]);
 			
 
-			console.log("respuesta", respuesta);
+			//console.log("respuesta", respuesta);
 
 
 
