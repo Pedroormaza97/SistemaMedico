@@ -86,7 +86,7 @@
                           <button type="button" class="btn btn-warning btnEditarPersona"  cedula="'.$value["cedula"].'" data-toggle="modal" data-target="#modaleditarpersona"><i class="fa fa-pencil"></i></button>
 
 
-                          <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                          <button class="btn btn-danger btnEliminarPersona" cedula="'.$value["cedula"].'"><i class="fa fa-times"></i></button>
                           </div>
                           </td> 
                           </tr>';
@@ -149,23 +149,23 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Apellido paterno<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="nuevoApellidop" type="text" /></div>
+                                                <input class="form-control"  name="nuevoApellidop" required='required' type="text" /></div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Apellido materno<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="nuevoApellidom" type="text" /></div>
+                                                <input class="form-control"  name="nuevoApellidom" required='required' type="text" /></div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Dirección/Domicilio<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="nuevaDireccion" type="text" /></div>
+                                                <input class="form-control"  name="nuevaDireccion" required='required' type="text" /></div>
                                         </div>
                                         <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Sexo<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="nuevoSexo">
-                                            <option>Opciones...</option>
+                                          <select class="form-control" required='required' Type="select" name="nuevoSexo">
+                                            <option></option>
                                             <option value="M">Masculino</option>
                                             <option value="F">Femenino</option> 
                                           </select>
@@ -174,15 +174,15 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Etnia<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevaEtnia" type="text" />
+                                                <input class="form-control" required='required' name="nuevaEtnia" type="text" />
                                             </div>
                                         </div>
 
                                         <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Estado civil<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="nuevoEstadocivil">
-                                          
+                                          <select class="form-control" required='required' Type="select" name="nuevoEstadocivil">
+                                            <option></option>
                                             <option>Soltero (a)</option>
                                             <option>Casado (a)</option>
                                             <option>Divorciado (a)</option>
@@ -195,7 +195,7 @@
                                       <label class="col-form-label col-md-3 col-sm-3 label-align">Fecha de Nacimiento<span class="">*</span>
                                       </label>
                                       <div class="col-md-6 col-sm-6 ">
-                                        <input id="nuevaFechaNacimiento" name="nuevaFechaNacimiento" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
+                                        <input id="nuevaFechaNacimiento" name="nuevaFechaNacimiento"  required='required' class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
                                           onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
                                         <script>
                                           function timeFunctionLong(input) {
@@ -209,7 +209,8 @@
                                     <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Tipo de Sangre<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="nuevoTiposangre">
+                                          <select class="form-control" required='required' Type="select" name="nuevoTiposangre">
+                                            <option></option>
                                             <option>O+</option>
                                             <option>O-</option>
                                             <option>A+</option>
@@ -331,7 +332,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Apellido paterno<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="editarApellidop" id="editarApellidop" value="" type="text" /></div>
+                                                <input class="form-control"  name="editarApellidop" required='required' id="editarApellidop" value="" type="text" /></div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Apellido materno<span class="required">*</span></label>
@@ -346,7 +347,7 @@
                                        <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Sexo<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="editarSexo">
+                                          <select class="form-control"  name="editarSexo">
                                             <option value="" id="editarSexo"></option>
                                             <option value="M">Masculino</option>
                                             <option value="F">Femenino</option> 
@@ -356,14 +357,14 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Etnia<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="editarEtnia" id="editarEtnia" type="text" />
+                                                <input class="form-control" name="editarEtnia"  id="editarEtnia" type="text" />
                                             </div>
                                         </div>
 
                                         <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Estado civil<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="editarEstadocivil">
+                                          <select class="form-control"  name="editarEstadocivil">
                                             <option value="" id="editarEstadocivil"></option>
                                             <option>Soltero (a)</option>
                                             <option>Casado (a)</option>
@@ -487,3 +488,37 @@
     </div>
   </div>
 
+
+
+    <script>
+
+        // initialize a validator instance from the "FormValidator" constructor.
+        // A "<form>" element is optionally passed as an argument, but is not a must
+        var validator = new FormValidator({
+            "events": ['blur', 'input', 'change']
+        }, document.forms[0]);
+        // on form "submit" event
+        document.forms[0].onsubmit = function(e) {
+            var submit = true,
+                validatorResult = validator.checkAll(this);
+            //console.log(validatorResult);
+            return !!validatorResult.valid;
+        };
+        // on form "reset" event
+        document.forms[0].onreset = function(e) {
+            validator.reset();
+        };
+        // stuff related ONLY for this demo page:
+        $('.toggleValidationTooltips').change(function() {
+            validator.settings.alerts = !this.checked;
+            if (this.checked)
+                $('form .alert').remove();
+        }).prop('checked', false);
+
+    </script>
+
+    <?php
+      $eliminarPersona = new ControladorPersonas();
+      $eliminarPersona -> ctrEliminarPersona();
+
+    ?>

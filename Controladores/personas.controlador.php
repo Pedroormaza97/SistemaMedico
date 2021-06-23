@@ -122,6 +122,79 @@ class ControladorPersonas{
 
     }
 
+     /**
+   * ELIMINAR PERSONA
+   */
+
+
+    static public function ctrEliminarPersona(){
+
+      if(isset($_GET["cedula"])){
+        $tabla = "persona";
+        $datos = $_GET["cedula"];
+
+
+        $respuesta = ModeloPersonas::mdlEliminarPersona($tabla, $datos);
+
+
+        if($respuesta == "ok"){
+            
+            echo '<script> 
+            Swal.fire({
+            title: "Confirmacion!",
+            text: "La persona con cedula '.$_GET["cedula"].' a sido eliminada de los registros correctamente.",
+            icon: "success",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "personas";
+            }
+
+
+            });
+            </script>';
+
+             
+           }else if($respuesta == "error"){
+            
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "No se pudo eliminar la persona de los registros ya que la cedula cuenta con un usuario en el sistema, elimine primero el usuario e intentelo denuevo.",
+            icon: "warning",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "personas";
+            }
+
+
+            });
+            </script>';
+
+           //}
+            
+           
+
+         
+
+          }
+
+
+
+
+
+      }
+
+      $tabla = "persona";
+
+      
+
+      return $respuesta;
+
+
+    }
+
 
 
      /**

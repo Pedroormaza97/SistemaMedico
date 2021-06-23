@@ -206,6 +206,39 @@ $("#cedulaUsuario").change(function(){
 
 
 
+//ELIMINAR PERSONA
+
+$(".btnEliminarPersona").click(function(){
+
+	cedula = $(this).attr("cedula");
+	//para futura eliminacion automatica de usuario al eliminar una persona
+	//usuario = $(this).attr("usuario");
+
+Swal.fire({
+		title: "¿Esta seguro de eliminar esta persona?",
+		text: "Si no lo está puede cancelar la accion!",
+		icon: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#3085d6",
+		cancelButtonColor: "#d33",
+		cancelButtonText: "Cancelar",
+		confirmButtonText: "Si, eliminar la persona"
+
+
+	}).then((result)=>{
+		if(result.value){
+			window.location = "index.php?ruta=personas&cedula="+cedula;
+
+
+		}
+
+	})
+
+
+
+
+
+})
 
 
 

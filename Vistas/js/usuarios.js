@@ -118,7 +118,7 @@ $(".btnEliminarUsuario").click(function(){
 		showCancelButton: true,
 		confirmButtonColor: "#3085d6",
 		cancelButtonColor: "#d33",
-		cancelButtonText: "cancelar",
+		cancelButtonText: "Cancelar",
 		confirmButtonText: "Si, eliminar el usuario"
 
 
