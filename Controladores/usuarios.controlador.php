@@ -286,7 +286,7 @@ class ControladorUsuarios{
             echo '<script> 
             Swal.fire({
             title: "Confirmacion!",
-            text: "El Usuario a sido eliminado correctamente.",
+            text: "El Usuario '.$_GET["usuario"].' a sido eliminado correctamente.",
             icon: "success",
            confirmButtonText: "Ok"}).then((result)=>{
 
