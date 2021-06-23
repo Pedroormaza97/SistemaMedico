@@ -101,6 +101,42 @@ $(".btnEditarUsuario").click(function(){
 })
 
 
+//ELIMINAR USUARIO
+$(".btnEliminarUsuario").click(function(){
+
+
+	var idUsuario = $(this).attr("idUsuario");
+	var fotoUsuario = $(this).attr("fotoUsuario");
+	var usuario = $(this).attr("usuario");
+
+
+
+	Swal.fire({
+		title: "¿Esta seguro de eliminar el usuario?",
+		text: "Si no lo está puede cancelar la accion!",
+		icon: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#3085d6",
+		cancelButtonColor: "#d33",
+		cancelButtonText: "cancelar",
+		confirmButtonText: "Si, eliminar el usuario"
+
+
+	}).then((result)=>{
+		if(result.value){
+			window.location = "index.php?ruta=usuarios&idUsuario="+idUsuario+"&usuario="+usuario+"&fotoUsuario="+fotoUsuario;
+
+
+		}
+
+	})
+
+	
+
+
+})
+
+
 
 //ACTIVAR USUARIO
 $(".btnActivar").click(function(){
@@ -145,17 +181,6 @@ $(".btnActivar").click(function(){
 		$(this).attr('estadoUsuario', "inactivo");
 
 	}
-	
-
-
-
-
-
-
-
-
-
-
 
 
 })

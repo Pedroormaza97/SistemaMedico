@@ -250,7 +250,7 @@ class ControladorUsuarios{
     }
 
     /**
-   * MOSTRAR USUARIOS
+   * VALIDAR INGRESO DE USUARIOS
    */
     static public function ctrValidarUsuario($item, $valor){
 
@@ -262,6 +262,80 @@ class ControladorUsuarios{
 
 
     }
+
+
+     /**
+   * ELIMINAR USUARIOS
+   */
+    static public function ctrEliminarUsuario(){
+
+      if(isset($_GET["idUsuario"])){
+        $tabla = "usuarios";
+        $datos = $_GET["idUsuario"];
+
+        if($_GET["fotoUsuario"] != ""){
+
+
+          unlink($_GET["fotoUsuario"]);
+          rmdir('vistas/img/usuarios/'.$_GET["usuario"]);
+        }
+        $respuesta = ModeloUsuarios::mdlEliminarUsuario($tabla, $datos);
+
+        if($respuesta == "ok"){
+            
+            echo '<script> 
+            Swal.fire({
+            title: "Confirmacion!",
+            text: "El Usuario a sido eliminado correctamente.",
+            icon: "success",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "usuarios";
+            }
+
+
+            });
+            </script>';
+
+             
+           }else if($respuesta == "error"){
+            
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "No se pudo eliminar el usuario, intentelo denuevo.",
+            icon: "error",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "usuarios";
+            }
+
+
+            });
+            </script>';
+
+           //}
+            
+           
+
+         
+
+          }
+
+
+
+      }
+
+     
+
+
+    }
+
+
+
+
 
     /**
    * EDITAR USUARIOS

@@ -127,7 +127,7 @@
 
   }
 
-  //MODELO VALIDAR USUARRIO
+  //MODELO VALIDAR USUARIO
 
   static public function mdlValidarUsuarios($tabla, $item, $valor){
 
@@ -147,7 +147,32 @@
    $stmt = null;
    }
 
+   //ELIMINAR USUARIO
 
+   static public function mdlEliminarUsuario($tabla, $datos){
+
+   
+
+     $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE `idUsuario` = :id");
+
+     $stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
+
+
+     if($stmt->execute()){
+
+      return "ok";  
+
+    }else{
+
+      return "error";
+    
+    }
+
+
+   $stmt -> close();
+
+   $stmt = null;
+   }
 
 
 

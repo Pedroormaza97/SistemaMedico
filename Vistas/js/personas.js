@@ -75,8 +75,13 @@ $("#nuevaCedula").change(function(){
 		success:function(respuesta){
 
 			if(respuesta){
+				//console.log("respuesta", respuesta);
+				var nombre = respuesta["1"];
+				var apellidop = respuesta["2"];
+				var apellidom = respuesta["3"];
 
-				$("#nuevaCedula").before('<script> Swal.fire({ title: "Error!",text: "La cedula ingresada ya existe en la base de datos.",icon: "error",confirmButtonText: "Ok"});</script>');
+
+				$("#nuevaCedula").before('<script> Swal.fire({ title: "Error!",text: "La cedula ingresada ya existe en la base de datos y pertenece a '+nombre+' '+apellidop+' '+apellidom+'.",icon: "error",confirmButtonText: "Ok"});</script>');
 
 
 
@@ -115,7 +120,7 @@ $("#cedulaUsuario").change(function(){
 		dataType: "json",
 		success:function(respuesta){
 
-			console.log("respuesta", respuesta);
+			//console.log("respuesta", respuesta);
 
 			if(respuesta){
 
@@ -169,13 +174,13 @@ $("#cedulaUsuario").change(function(){
 		dataType: "json",
 		success:function(respuesta1){
 
-			console.log("respuesta1", respuesta1);
+			//console.log("respuesta1", respuesta1);
 
 			var user = respuesta1["0"];
 
 			 if(respuesta1){
 
-				$("#cedulaUsuario").before('<br><script> Swal.fire({ title: "Error!",text: "La cedula ingresada ya pertenece al usuario: '+user+'",icon: "error",confirmButtonText: "Ok"});</script>');
+				$("#cedulaUsuario").before('<script> Swal.fire({ title: "Error!",text: "La cedula ingresada ya pertenece al usuario: '+user+'",icon: "error",confirmButtonText: "Ok"});</script>');
 				
 				
            		 
