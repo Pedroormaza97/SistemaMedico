@@ -118,7 +118,7 @@
             <div  class="modal fade" id="modalnuevousuario" tabindex="-1" role="dialog" aria-hidden="true" >
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                  <form class="" action="" method="post" enctype="multipart/form-data" novalidate>
+                  <form class="" action="" method="post" enctype="multipart/form-data"  novalidate>
                   <div class="x_content">
                   <!--MODAL HEADER-->
                   <div class="modal-header">
@@ -139,19 +139,19 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Cedula<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevaCedulap"  id="cedulaUsuario" type="text" /></div>
+                                                <input class="form-control" name="nuevaCedulap"  id="cedulaUsuario" required="required" required type="text" /></div>
                                         </div>
                                         
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Usuario<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="nuevoUsuario" id="nombreUsuario" readonly required="required" type="text" />
+                                                <input class="form-control" name="nuevoUsuario" id="nombreUsuario" readonly  type="text" />
                                             </div>
                                         </div>
                                         <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Password<span class="required">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <input class="form-control" type="password" id="password1" name="nuevoPassword" title="Minimum 5 Characters incluyendo mayusculas, minusculas y numeros" required />
+                                          <input class="form-control" Type="password" id="password1" name="nuevoPassword" title="Minimum 5 Characters incluyendo mayusculas, minusculas y numeros" required  required="required"/>
                                           
                                           <span style="position: absolute;right:15px;top:7px;" onclick="hideshow()" >
                                             <i id="slash" class="fa fa-eye-slash"></i>
@@ -159,16 +159,12 @@
                                           </span>
                                         </div>
                                       </div>
-                                      <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Repeat password<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" type="password" name="password2" data-validate-linked='nuevoPassword' required='required' /></div>
-                                        </div>
+                                      
                                         <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Rol<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" Type="text" name="nuevoRol">
-                                            <option>Opciones...</option>
+                                          <select class="form-control"  Type="select" required required="select" name="nuevoRol">
+                                            <option></option>
                                             <option value="1">1.- Administrador</option>
                                             <option value="2">2.- Medico</option>
                                             <option value="3">3.- Recepcionista</option>
@@ -189,8 +185,8 @@
                                        <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Estado<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" Type="text" name="nuevoEstado">
-                                            <option>Opciones...</option>
+                                          <select class="form-control" Type="text" required  required="required" name="nuevoEstado">
+                                            <option></option>
                                             <option value="Activo">ACTIVO</option>
                                             <option value="Inactivo">INACTIVO</option>
                                           </select>
@@ -279,11 +275,7 @@
                                           </span>
                                         </div>
                                       </div>
-                                      <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Repeat password<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" type="password" name="password2" data-validate-linked='nuevoPassword' required='required' /></div>
-                                        </div>
+                      
                                         <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Rol<span class="">*</span></label>
                                         <div class="col-md-6 col-sm-6">
@@ -370,6 +362,54 @@
   </div>
 
 
+    
+    <!-- Javascript functions -->
+  <script>
+    function hideshow(){
+      var password = document.getElementById("password1");
+      var slash = document.getElementById("slash");
+      var eye = document.getElementById("eye");
+      
+      if(password.type === 'password'){
+        password.type = "text";
+        slash.style.display = "block";
+        eye.style.display = "none";
+      }
+      else{
+        password.type = "password";
+        slash.style.display = "none";
+        eye.style.display = "block";
+      }
+
+    }
+  </script>
+
+    <script>
+
+        // initialize a validator instance from the "FormValidator" constructor.
+        // A "<form>" element is optionally passed as an argument, but is not a must
+        var validator = new FormValidator({
+            "events": ['blur', 'input', 'change']
+        }, document.forms[0]);
+        // on form "submit" event
+        document.forms[0].onsubmit = function(e) {
+            var submit = true,
+                validatorResult = validator.checkAll(this);
+            //console.log(validatorResult);
+            return !!validatorResult.valid;
+        };
+        // on form "reset" event
+        document.forms[0].onreset = function(e) {
+            validator.reset();
+        };
+        // stuff related ONLY for this demo page:
+        $('.toggleValidationTooltips').change(function() {
+            validator.settings.alerts = !this.checked;
+            if (this.checked)
+                $('form .alert').remove();
+        }).prop('checked', false);
+
+    </script>
 
 <?php
 

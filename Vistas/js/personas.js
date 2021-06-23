@@ -2,7 +2,7 @@
 
 $(".btnEditarPersona").click(function(){ 
 	var cedula = $(this).attr("cedula");
-	console.log("cedula", cedula);
+	//console.log("cedula", cedula);
 
 	 var datos = new FormData();
 	 datos.append("cedula", cedula);
@@ -86,6 +86,8 @@ $("#nuevaCedula").change(function(){
 
 
 				$("#nuevaCedula").val("");
+
+
 
 
 			}
@@ -181,10 +183,7 @@ $("#cedulaUsuario").change(function(){
 			 if(respuesta1){
 
 				$("#cedulaUsuario").before('<script> Swal.fire({ title: "Error!",text: "La cedula ingresada ya pertenece al usuario: '+user+'",icon: "error",confirmButtonText: "Ok"});</script>');
-				
-				
-           		 
-            
+			
 
 			 	$("#cedulaUsuario").val("");
 			 	$("#nombreUsuario").val("");

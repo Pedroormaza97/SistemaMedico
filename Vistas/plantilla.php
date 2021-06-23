@@ -62,6 +62,15 @@ session_start();
     <link href="vistas/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
      <!--SweetAle -->
     <script src="vistas/vendors/sweetalert2/sweetalert2.all.min.js"></script> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="vistas/vendors/validator/multifield.js"></script>
+    <script src="vistas/vendors/validator/validator.js"></script>
+
+        <!-- Javascript functions -->
+  
+
+    
     <!-- Custom Theme Style -->
     <link href="vistas/build/css/custom.css" rel="stylesheet">
   </head>
