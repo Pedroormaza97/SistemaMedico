@@ -408,39 +408,14 @@ class ControladorUsuarios{
 
           $tabla = "usuarios";
 
-          if($_POST["editarPassword"] !=""){
+          if($_POST["editarPassword"] != ""){
+
             if(preg_match('/^[a-zA-Z0-9]/', $_POST["editarPassword"])){
 
               $encriptar = crypt($_POST["editarPassword"], '$2a$07$usesomesillystringforsalt$');
-          }else{
-            echo '<br><script> 
-            Swal.fire({
-            title: "Error!",
-            text: "La contraseña no debe ir vacia o llevar caracteres especiales, intentelo denuevo.",
-            icon: "error",
-           confirmButtonText: "Ok"}).then((result)=>{
-
-            if(result.value){
-              window.location = "usuarios";
-            }
 
 
-            });
-            </script>';
-
-          }
-       }else{
-
-        $encriptar = $passwordActual;
-
-
-       }
-
-       
-
-
-
-       $datos = array("arr_usuario" => $_POST["editarUsuario"],
+              $datos = array("arr_usuario" => $_POST["editarUsuario"],
                         "arr_password" => $encriptar,
                         "arr_rol" => $_POST["editarRol"],
                         "arr_cedulap" => $_POST["editarCedulap"],
@@ -483,19 +458,82 @@ class ControladorUsuarios{
 
             });
             </script>';
-
-           //}
             
-           
-
-         
 
           }
-       
+          }else{
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "La contraseña no debe llevar caracteres especiales, intentelo denuevo.",
+            icon: "error",
+           confirmButtonText: "Ok"}).then((result)=>{
 
-        
+            if(result.value){
+              window.location = "usuarios";
+            }
 
 
+            });
+            </script>';
+
+          }
+       }else{
+
+        $encriptar = $_POST["passwordActual"];
+
+         $datos = array("arr_usuario" => $_POST["editarUsuario"],
+                        "arr_password" => $encriptar,
+                        "arr_rol" => $_POST["editarRol"],
+                        "arr_cedulap" => $_POST["editarCedulap"],
+                        "arr_rutaImg" => $ruta,
+                        "arr_estado" => $_POST["editarEstado"]);
+
+       $respuesta = ModeloUsuarios::mdlEditarUsuario($tabla, $datos);
+
+       if($respuesta == "ok"){
+            
+            echo '<script> 
+            Swal.fire({
+            title: "Confirmacion!",
+            text: "El Usuario a sido modificado correctamente.",
+            icon: "success",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "usuarios";
+            }
+
+
+            });
+            </script>';
+
+             
+           }else if($respuesta == "error"){
+            
+            echo '<br><script> 
+            Swal.fire({
+            title: "Error!",
+            text: "No se pudieron modificar los datos en la base de datos, intentelo denuevo.",
+            icon: "error",
+           confirmButtonText: "Ok"}).then((result)=>{
+
+            if(result.value){
+              window.location = "usuarios";
+            }
+
+
+            });
+            </script>';
+            
+
+          }
+
+
+
+       }
+
+      
 
 
       }
@@ -503,10 +541,6 @@ class ControladorUsuarios{
 
 
     }
-
-
-
-
 
 
 
