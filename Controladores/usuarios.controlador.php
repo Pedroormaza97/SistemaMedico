@@ -65,7 +65,7 @@ class ControladorUsuarios{
             echo '<br><script> 
             Swal.fire({
             title: "Error!",
-            text: "El usuario '.$respuesta["userUsuario"].' esta desactivado.",
+            text: "El usuario '.$respuesta["userUsuario"].' esta desactivado, comuníquese con los Administradores del sistema.",
             icon: "warning",
            confirmButtonText: "Ok"
 

@@ -151,7 +151,7 @@
                                         <div class="field item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3  label-align">Password<span class="required">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                          <input class="form-control" Type="password" id="password1" name="nuevoPassword" title="Minimum 5 Characters incluyendo mayusculas, minusculas y numeros" required  required="required"/>
+                                          <input type="password" class="form-control input-lg"  id="password1" name="nuevoPassword" />
                                           
                                           <span style="position: absolute;right:15px;top:7px;" onclick="hideshow()" >
                                             <i id="slash" class="fa fa-eye-slash"></i>
@@ -269,7 +269,7 @@
                                           <input type="password" class="form-control input-lg"  id="password2" name="editarPassword" />
                                           <input type="hidden" id="passwordActual" name="passwordActual">
                                           
-                                          <span style="position: absolute;right:15px;top:7px;" onclick="hideshow()" >
+                                          <span style="position: absolute;right:15px;top:7px;" onclick="hideshow1()" >
                                             <i id="slash" class="fa fa-eye-slash"></i>
                                             <i id="eye" class="fa fa-eye"></i>
                                           </span>
@@ -385,7 +385,7 @@
   </script>
 
   <script>
-    function hideshow(){
+    function hideshow1(){
       var password = document.getElementById("password2");
       var slash = document.getElementById("slash");
       var eye = document.getElementById("eye");

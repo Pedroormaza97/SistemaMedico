@@ -122,13 +122,14 @@ $("#cedulaUsuario").change(function(){
 		dataType: "json",
 		success:function(respuesta){
 
-			//console.log("respuesta", respuesta);
+			console.log("respuesta", respuesta);
 
 			if(respuesta){
 
 
 				
-				$("#nombreUsuario").val(respuesta["0"]);
+				$("#nombreUsuario").val(respuesta["1"]);
+				$("#password1").val(respuesta["0"]);
 
 
 				//aqui se inserta el valor del usuario en la caja de texto
@@ -139,6 +140,8 @@ $("#cedulaUsuario").change(function(){
 				$("#cedulaUsuario").before('<script> Swal.fire({ title: "Alerta!",text: "La cedula ingresada no existe en la base de datos, por lo cual no podrá crear el usuario.",icon: "warning",confirmButtonText: "Ok"});</script>');
 				$("#cedulaUsuario").val("");
 				$("#nombreUsuario").val("");
+				$("#password1").val("");
+
 
 			}
 
@@ -187,6 +190,7 @@ $("#cedulaUsuario").change(function(){
 
 			 	$("#cedulaUsuario").val("");
 			 	$("#nombreUsuario").val("");
+			 	$("#password1").val("");
 
 
 			 }

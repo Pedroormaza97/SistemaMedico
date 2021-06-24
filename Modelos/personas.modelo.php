@@ -40,7 +40,7 @@ require_once "conexion.php";
 
    
 
-     $stmt = Conexion::conectar()->prepare("SELECT  CONCAT(LOWER(LEFT(`nombre`, 1)), LOWER(`apellido_p`), substring(`cedula`,7)) FROM $tabla WHERE $item = :$item;");
+     $stmt = Conexion::conectar()->prepare("SELECT  `cedula`, CONCAT(LOWER(LEFT(`nombre`, 1)), LOWER(`apellido_p`), substring(`cedula`,7)) FROM $tabla WHERE $item = :$item;");
 
      $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
