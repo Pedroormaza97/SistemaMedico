@@ -44,7 +44,7 @@ $(".nuevaFoto").change(function(){
 
 /*EDITAR USUARIO*/
 
-$(".btnEditarUsuario").click(function(){
+$(document).on("click", ".btnEditarUsuario", function(){
 	var idUsuario = $(this).attr("idUsuario");
 	
 
@@ -102,7 +102,8 @@ $(".btnEditarUsuario").click(function(){
 
 
 //ELIMINAR USUARIO
-$(".btnEliminarUsuario").click(function(){
+$(document).on("click", ".btnEliminarUsuario", function(){
+
 
 
 	var idUsuario = $(this).attr("idUsuario");
@@ -139,7 +140,9 @@ $(".btnEliminarUsuario").click(function(){
 
 
 //ACTIVAR USUARIO
-$(".btnActivar").click(function(){
+$(document).on("click", ".btnActivar", function(){
+
+
 
 	var idUsuario = $(this).attr("idUsuario");
 	var estadoUsuario = $(this).attr("estadoUsuario");
@@ -161,6 +164,20 @@ $(".btnActivar").click(function(){
 		success: function(respuesta){
 
 			//console.log("respuesta", respuesta);
+			if(window.matchMedia("(max-width:767px)").matches){
+
+
+				swal.fire({
+					title: "El estado del usuario ha sido actualizado",
+					icon: "success",
+					confirmButtonText: "Cerrar"
+					}).then(function(result){
+					if(result.value){
+					window.location = "usuarios";
+					}
+				});
+
+			}
 
 		}
 

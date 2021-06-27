@@ -1,6 +1,6 @@
 /*EDITAR USUARIO*/
 
-$(".btnEditarPersona").click(function(){ 
+$(document).on("click", ".btnEditarPersona", function(){ 
 	var cedula = $(this).attr("cedula");
 	//console.log("cedula", cedula);
 
@@ -122,7 +122,7 @@ $("#cedulaUsuario").change(function(){
 		dataType: "json",
 		success:function(respuesta){
 
-			console.log("respuesta", respuesta);
+			//console.log("respuesta", respuesta);
 
 			if(respuesta){
 
@@ -212,7 +212,8 @@ $("#cedulaUsuario").change(function(){
 
 //ELIMINAR PERSONA
 
-$(".btnEliminarPersona").click(function(){
+
+$(document).on("click", ".btnEliminarPersona", function(){ 
 
 	cedula = $(this).attr("cedula");
 	//para futura eliminacion automatica de usuario al eliminar una persona

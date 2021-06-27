@@ -29,7 +29,7 @@
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
                     
-                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
                           <th>#Ci</th>
@@ -259,7 +259,7 @@
                                         
                                             
                                                 <div class="col-md-6 offset-md-3">
-                                                    <button type='submit' class="btn btn-primary">Submit</button>
+                                                    <button type='submit' class="btn btn-primary">Ingresar</button>
                                                     <button type='reset' class="btn btn-success">Reset</button>
                                                     
                                                 </div>
@@ -442,8 +442,8 @@
                                         
                                             
                                                 <div class="col-md-6 offset-md-3">
-                                                    <button type='submit' class="btn btn-primary">Submit</button>
-                                                    <button type='reset' class="btn btn-success">Reset</button>
+                                                    <button type='submit' class="btn btn-primary">Actualizar</button>
+                                                    
                                                     
                                                 </div>
                                             
