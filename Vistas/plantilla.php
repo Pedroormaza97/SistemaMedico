@@ -93,6 +93,8 @@ session_start();
        include "vistas/modulos/cabezote.php";
          }elseif ($_SESSION["rol"] == "2") {
          include "vistas/modulos/cabezotemedico.php";
+         }elseif ($_SESSION["rol"] == "3") {
+         include "vistas/modulos/cabezoterecepcionista.php";
          }
 
        if (isset($_GET["ruta"])) {
