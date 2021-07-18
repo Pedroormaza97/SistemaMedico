@@ -89,15 +89,18 @@ session_start();
   if (isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] == "ok") {
 
      //echo '<div class="login_wrapper">';
-        
+         if ($_SESSION["rol"] == "1"){
        include "vistas/modulos/cabezote.php";
-
+         }elseif ($_SESSION["rol"] == "2") {
+         include "vistas/modulos/cabezotemedico.php";
+         }
 
        if (isset($_GET["ruta"])) {
            if ($_GET["ruta"] == "inicio" ||
             $_GET["ruta"] == "calendario"||
                 $_GET["ruta"] == "usuarios"||
                 $_GET["ruta"] == "personas"||
+                $_GET["ruta"] == "categorias"||
                     $_GET["ruta"] == "salir") {
                include "vistas/modulos/".$_GET["ruta"].".php";
            } else {
