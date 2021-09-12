@@ -5386,7 +5386,7 @@ fieldset {
 }
 
 .cropper .docs-data>.input-group>label {
-  min-width: 80px;
+  min-width: 150px;
 }
 
 .cropper .docs-data>.input-group>span {

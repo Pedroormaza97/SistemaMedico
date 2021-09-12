@@ -14,18 +14,29 @@ class ControladorPersonas{
                         "arr_nombre" => $_POST["nuevoNombre"],
                         "arr_apellido_p" => $_POST["nuevoApellidop"],
                         "arr_apellido_m" => $_POST["nuevoApellidom"],
-                        "arr_dir_domicilio" => $_POST["nuevaDireccion"],
+                        "arr_email" => $_POST["nuevoEmail"],
+                        "arr_telefono" => $_POST["nuevoTelefono"],
+                        "arr_direccion" => $_POST["nuevaDireccion"],
+                        "arr_fechanacimiento" => $_POST["nuevaFechaNacimiento"],
+                        "arr_nacionalidad" => $_POST["nuevaNacionalidad"],
+                        "arr_lugarnacimiento" => $_POST["nuevoLugarNacimiento"],
                         "arr_sexo" => $_POST["nuevoSexo"],
                         "arr_etnia" => $_POST["nuevaEtnia"],
                         "arr_estadocivil" => $_POST["nuevoEstadocivil"],
-                        "arr_fecha_naci" => $_POST["nuevaFechaNacimiento"],
                         "arr_t_sangre" => $_POST["nuevoTiposangre"],
                         "arr_hijosv" => $_POST["nuevosHijosvarones"],
                         "arr_hijosm" => $_POST["nuevasHijasmujeres"],
                         "arr_tabaquismo" => $_POST["nuevoTabaquismo"],
                        "arr_ocupacion" => $_POST["nuevaOcupacion"],
                        "arr_cargo" => $_POST["nuevoCargo"],
-                       "arr_idpareja" => $_POST["nuevoIdpareja"]);
+                       "arr_idpareja" => $_POST["nuevoIdpareja"],
+                       "arr_referido" => $_POST["nuevoReferido"],
+                       "arr_id_cont_fam" => $_POST["nuevoid_cont_fam"],
+                       "arr_barrio" => $_POST["nuevoBarrio"],
+                       "arr_parroquia" => $_POST["nuevaParroquia"],
+                       "arr_canton" => $_POST["nuevoCanton"],
+                       "arr_provincia" => $_POST["nuevaProvincia"],
+                       "arr_tiposeguro" => $_POST["nuevotiposeguro"],);
           
 
            $respuesta = ModeloPersonas::mdlCrearPersonas($tabla, $datos);
@@ -40,7 +51,7 @@ class ControladorPersonas{
            closeOnConfirm: false}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "ingresarpersonas";
             }
 
 
@@ -58,7 +69,7 @@ class ControladorPersonas{
            closeOnConfirm: false}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "ingresarpersonas";
             }
 
 
@@ -80,7 +91,7 @@ class ControladorPersonas{
            closeOnConfirm: false}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "ingresarpersonas";
             }
 
 
@@ -186,11 +197,6 @@ class ControladorPersonas{
 
       }
 
-      $tabla = "persona";
-
-      
-
-      return $respuesta;
 
 
     }

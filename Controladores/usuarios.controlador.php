@@ -9,8 +9,8 @@ class ControladorUsuarios{
         if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
   			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["password"])){
 
-          $encriptar = crypt($_POST["password"], '$2a$07$usesomesillystringforsalt$');
-
+          // $encriptar = crypt($_POST["password"], '$2a$07$usesomesillystringforsalt$');
+          $encriptar = $_POST["password"];
            $tabla = "usuarios";
 
            $item = "userUsuario";
@@ -22,13 +22,13 @@ class ControladorUsuarios{
 
           if($respuesta["userUsuario"] == $_POST["ingUsuario"] && $respuesta["passUsuario"] == $encriptar){
 
-            if($respuesta["Estado"] == "activo"){
+            if($respuesta["estado"] == "activo"){
              //echo '<div class="alert -success">Bienvenido al Sistema</div>';
             $_SESSION["iniciarsesion"] = "ok";
             $_SESSION["idUsuario"] = $respuesta["idUsuario"];
             $_SESSION["nombreUsuario"] = $respuesta["userUsuario"];
-            $_SESSION["rol"] = $respuesta["rol_idrol"];
-            $_SESSION["fotoUsuario"] = $respuesta["FotoPerfilUsuario"];
+            $_SESSION["rol"] = $respuesta["idRol"];
+            $_SESSION["fotoUsuario"] = $respuesta["fotoPerfilUsuario"];
 
             //Registrar fecha y hora de el ultimo login
 
@@ -40,7 +40,7 @@ class ControladorUsuarios{
 
             //$tabla = "usuarios";
 
-            $item1 = "ultimo_login";
+            $item1 = "ultimoLogin";
             $valor1 = "$fechaActual";
 
             $item2 = "idUsuario";

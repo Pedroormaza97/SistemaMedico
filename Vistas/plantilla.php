@@ -89,13 +89,13 @@ session_start();
   if (isset($_SESSION["iniciarsesion"]) && $_SESSION["iniciarsesion"] == "ok") {
 
      //echo '<div class="login_wrapper">';
-         if ($_SESSION["rol"] == "1"){
+         // if ($_SESSION["rol"] == "1"){
        include "vistas/modulos/cabezote.php";
-         }elseif ($_SESSION["rol"] == "2") {
-         include "vistas/modulos/cabezotemedico.php";
-         }elseif ($_SESSION["rol"] == "3") {
-         include "vistas/modulos/cabezoterecepcionista.php";
-         }
+         // }elseif ($_SESSION["rol"] == "2") {
+         // include "vistas/modulos/cabezotemedico.php";
+         // }elseif ($_SESSION["rol"] == "3") {
+         // include "vistas/modulos/cabezoterecepcionista.php";
+         // }
 
        if (isset($_GET["ruta"])) {
            if ($_GET["ruta"] == "inicio" ||
@@ -103,6 +103,7 @@ session_start();
                 $_GET["ruta"] == "usuarios"||
                 $_GET["ruta"] == "personas"||
                 $_GET["ruta"] == "categorias"||
+                $_GET["ruta"] == "ingresarpersonas"||
                     $_GET["ruta"] == "salir") {
                include "vistas/modulos/".$_GET["ruta"].".php";
            } else {

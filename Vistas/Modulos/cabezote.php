@@ -24,7 +24,7 @@
             </li>
             <li><a><i class="fa fa-edit"></i> Formularios <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="form.html">General Form</a></li>
+                <li><a href="ingresarpersonas">Ingresar persona</a></li>
                 <li><a href="form_advanced.html">Advanced Components</a></li>
                 <li><a href="form_validation.html">Form Validation</a></li>
                 <li><a href="form_wizards.html">Form Wizard</a></li>
