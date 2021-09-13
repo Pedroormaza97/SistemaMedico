@@ -107,7 +107,7 @@
                           <td>
 
                           <div class="btn-group">
-                          <button type="button" class="btn btn-warning btnEditarPersona"  cedula="'.$value["cedulaPer"].'" data-toggle="modal" data-target="#modaleditarpersona"><i class="fa fa-pencil"></i></button>
+                          <button type="button" class="btn btn-warning btnEditarPersona" cedula="'.$value["cedulaPer"].'" data-toggle="modal" data-target="#modaleditarpersona"><i class="fa fa-pencil"></i></button>
 
 
                           <button class="btn btn-danger btnEliminarPersona" cedula="'.$value["cedulaPer"].'"><i class="fa fa-times"></i></button>
@@ -131,17 +131,13 @@
                   </div>
               </div>
             </div>
-
-
-                        </div>
             
                 
-<!-- /page content -->
 
 
 <!--MODAL DE NUEVO USUARIO-->
 
-            <div class="modal fade " id="modalnuevapersona" tabindex="-1" role="dialog" aria-hidden="true" >
+            <div class="modal fade " id="modalnuevapersona" role="dialog" tabindex="-1" aria-hidden="true" >
               <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                   <form class="" action="" method="post" novalidate>
@@ -378,12 +374,14 @@
            
             </div>
         </div>
+        </div>
 
 
-   <!--MODAL EDITAR PERSONA-->
 
-            <div class="modal fade " id="modaleditarpersona" tabindex="-1" role="dialog" aria-hidden="true" >
-              <div class="modal-dialog modal-lg">
+  <!--MODAL EDITAR PERSONA-->
+
+            <div class="modal fade" id="modaleditarpersona" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                   <form class="" action="" method="post" novalidate>
                   <div class="x_content">
@@ -404,67 +402,46 @@
                                         <span class="section">Informacion de la persona</span>
 
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Cedula<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="editarCedula" id="editarCedula" value="" readonly type="text" required='required'/></div>
+                                            <label  class="col-md-1" for="EditarCedula">Cedula:</label>
+                                            <div class="col-md-3 ">
+                                                <input class="form-control" class='optional' name="EditarCedula" id="EditarCedula"  type="text" readonly="" required='required'/></div>
+                                        
+                                            <label class="col-md-1" for="EditarNombre">Nombre:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  class='optional' name="EditarNombre" id="EditarNombre" type="text" required='required'/>
+                                            </div>
+                                            <label class="col-md-1" for="EditarApellidop">Apellido p:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  name="EditarApellidop" id="EditarApellidop" required='required' type="text" /></div>
+                                           </div> 
+                                            
+                                         <div class="field item form-group">
+                                        
+                                            <label class="col-md-1" for="EditarApellidom">Apellido m:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  name="EditarApellidom" id="EditarApellidom" required='required' type="text" /></div>
+
+                                            <label class="col-md-1" for="EditarEmail">Email:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  name="EditarEmail" id="EditarEmail" required='required' type="text" /></div>
+                                                
+
+                                            <label class="col-md-1" for="EditarTelefono">Telefono:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  name="EditarTelefono" id="EditarTelefono" required='required' type="text" /></div>
                                         </div>
 
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Nombre<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  class='optional' name="editarNombre" id="editarNombre" value="" type="text" required='required'/>
-                                            </div>
-                                        </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Apellido paterno<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="editarApellidop" required='required' id="editarApellidop" value="" type="text" /></div>
-                                        </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Apellido materno<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="editarApellidom" id="editarApellidom" value=""type="text" /></div>
-                                        </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Dirección/Domicilio<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="editarDireccion" id="editarDireccion" value=""type="text" /></div>
-                                        </div>
-                                       <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Sexo<span class="">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <select class="form-control"  name="editarSexo">
-                                            <option value="" id="editarSexo"></option>
-                                            <option value="M">Masculino</option>
-                                            <option value="F">Femenino</option> 
-                                          </select>
-                                        </div>
-                                      </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Etnia<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="editarEtnia"  id="editarEtnia" type="text" />
-                                            </div>
-                                        </div>
 
-                                        <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Estado civil<span class="">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <select class="form-control"  name="editarEstadocivil">
-                                            <option value="" id="editarEstadocivil"></option>
-                                            <option>Soltero (a)</option>
-                                            <option>Casado (a)</option>
-                                            <option>Divorciado (a)</option>
-                                            <option>Union Libre</option>
-                                            <option>Viudo (a)</option>
-                                          </select>
-                                        </div>
-                                      </div>
-                                      <div class="field item form-group">
-                                      <label class="col-form-label col-md-3 col-sm-3 label-align">Editar Fecha de Nacimiento<span class="">*</span>
-                                      </label>
-                                      <div class="col-md-6 col-sm-6 ">
-                                        <input id="editarFechaNacimiento" name="editarFechaNacimiento" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
+
+                                            <label class="col-md-1" for="EditarDireccion">Dirección:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  name="EditarDireccion" id="EditarDireccion" required='required' type="text" /></div>
+
+
+                                            <label class="col-md-1" for="EditarFechaNacimiento">Fecha de Nacimiento:</label>
+                                      <div class="col-md-3 col-sm-3 ">
+                                        <input id="EditarFechaNacimiento" name="EditarFechaNacimiento"  required='required' class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
                                           onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
                                         <script>
                                           function timeFunctionLong(input) {
@@ -474,12 +451,53 @@
                                           }
                                         </script>
                                       </div>
-                                    </div>
-                                    <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Tipo de Sangre<span class="">*</span></label>
-                                        <div class="col-md-6 col-sm-6">
-                                          <select class="form-control" name="editarTiposangre">
-                                            <option value="" id="editarTiposangre"></option>
+
+                                      <label  class="col-md-1" for="EditarNacionalidad">Nacionalidad:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  name="EditarNacionalidad" id="EditarNacionalidad" required='required' type="text" /></div>
+                                      </div>
+                                        <div class="field item form-group">
+
+                                          <label  class="col-md-1" for="EditarLugarNacimiento">Lugar de Nacimiento:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  name="EditarLugarNacimiento" id="EditarLugarNacimiento" required='required' type="text" /></div>
+                                        
+                                         <label class="col-md-1" for="EditarSexo">Sexo:</label>
+                                        <div class="col-md-3 col-sm-3">
+                                          <select class="form-control" required='required' Type="select" name="EditarSexo" id="EditarSexo">
+                                            <option></option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option> 
+                                          </select>
+                                        </div>
+                                        
+                                      
+                                            <label class="col-md-1" for="EditarEtnia">Etnia:</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control" required='required' name="EditarEtnia"  id="EditarEtnia" type="text" />
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="field item form-group">
+
+                                        <label class="col-md-1" for="EditarEstadocivil">Estado Civil:</label>
+                                        <div class="col-md-2 col-sm-2">
+                                          <select class="form-control" required='required' Type="select" name="EditarEstadocivil" id="EditarEstadocivil">
+                                            <option></option>
+                                            <option>Soltero (a)</option>
+                                            <option>Casado (a)</option>
+                                            <option>Divorciado (a)</option>
+                                            <option>Union Libre</option>
+                                            <option>Viudo (a)</option>
+                                          </select>
+                                        </div>
+                                      
+                                      
+                                    
+                                        <label class="col-md-1" for="EditarTipoSangre">Tipo de sangre:</label>
+                                        <div class="col-md-1 col-sm-1">
+                                          <select class="form-control" required='required' Type="select" name="EditarTipoSangre" id="EditarTipoSangre">
+                                            <option></option>
                                             <option>O+</option>
                                             <option>O-</option>
                                             <option>A+</option>
@@ -490,40 +508,82 @@
                                             <option>AB-</option>
                                           </select>
                                         </div>
-                                      </div>
                                         
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Hijos varones <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" type="number" class='number' name="editarHijosvarones" id="editarHijosvarones" ></div>
-                                        </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Hijas mujeres <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" type="number" class='number' name="editarHijasmujeres" id="editarHijasmujeres" ></div>
-                                        </div>
+                                      
+                                            <label class="col-md-1" for="EditarHijosVarones">Hijos varones:</label>
+                                            <div class="col-md-1 col-sm-1">
+                                                <input class="form-control" type="number" class='number' name="EditarHijosVarones" id="EditarHijosVarones"></div>
                                         
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Tabaquismo<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" name="editarTabaquismo" id="editarTabaquismo" type="text"/>
+                                            <label class="col-md-1" for="EditarHijasMujeres">Hijas mujeres:</label>
+                                            <div class="col-md-1 col-sm-1">
+                                                <input class="form-control" type="number" class='number' name="EditarHijasMujeres" id="EditarHijasMujeres" ></div>
+
+                                                <label class="col-md-1" for="EditarTabaquismo">Tabaquismo:</label>
+                                            <div class="col-md-1 col-sm-1">
+                                                <input class="form-control" name="EditarTabaquismo" id="EditarTabaquismo" type="text"/>
                                             </div>
+                                                </div>
+                                    <div class="field item form-group">
+                                        
+                                            
+                                        
+                                            <label class="col-md-1" for="EditarOcupacion">Ocupacion:</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control"  name="EditarOcupacion" id="EditarOcupacion"  type="text" /></div>
+                                        
+                                            <label class="col-md-1" for="EditarCargo">Cargo* :</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control"  name="EditarCargo" id="EditarCargo"  type="text" /></div>
+                                        
+                                            <label class="col-md-1" for="EditarIdpareja">Id pareja:</label>
+
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control" type="number" class='number' name="EditarIdpareja" id="EditarIdpareja" ></div>
+
+                                            <label class="col-md-1" for="EditarReferido">Referido* :</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control"  name="EditarReferido" id="EditarReferido"  type="text" /></div>
                                         </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Ocupacion<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="editarOcupacion" id="editarOcupacion"  type="text" /></div>
-                                        </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Cargo<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control"  name="editarCargo" id="editarCargo"  type="text" /></div>
-                                        </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Editar Id pareja <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" type="number" class='number' name="editarIdpareja" id="editarIdpareja" ></div>
-                                        </div>
+                                        
+                                    <div class="field item form-group">
+
+                                        
+
+                                        <label class="col-md-1" for="EditarIdFamiliam">Id Contacto fam.* :</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control" class="number" name="EditarIdFamilia" id="EditarIdFamilia"  type="number" /></div>
+
+                                        <label class="col-md-1" for="EditarProvincia">Provincia* :</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control"  name="EditarProvincia" id="EditarProvincia"  type="text" /></div>
+                                                
+                                                
+                                        <label class="col-md-1" for="EditarCanton">Canton* :</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control"  name="EditarCanton" id="EditarCanton"  type="text" /></div>
+
+                                          <label class="col-md-1" for="EditarParroquia">Parroquia* :</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control"  name="EditarParroquia" id="EditarParroquia"  type="text" /></div>
+                                                </div>
+                                                <div class="field item form-group">
+
+                                        
+
+
+                                        <label class="col-md-1" for="EditarBarrio">Barrio* :</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control"  name="EditarBarrio"  id="EditarBarrio" type="text" /></div>
+                                                
+                                          <label class="col-md-1" for="EditarTipoSeguro">Tipo de seguro* :</label>
+                                            <div class="col-md-2 col-sm-2">
+                                                <input class="form-control"  name="EditarTipoSeguro" id="EditarTipoSeguro"  type="text" /></div>
+                                                
+
+                                            <label class="col-md-1" for="EditarFechaAdminPer">Fecha Admision* :</label>
+                                            <div class="col-md-3 col-sm-3">
+                                                <input class="form-control"  name="EditarFechaAdminPer" id="EditarFechaAdminPer" readonly="" type="text" /></div>
+                                                </div>
                                         
                                         
                                             
@@ -561,18 +621,20 @@
            
             </div>
         </div>
+        </div>
                
 
-
-
-      
-    
+<!-- /page content -->
 <!-- /page content -->
           </div>
        </div>
       </div>
     </div>
-  </div>
+</div>
+
+      
+    
+
 
 
 

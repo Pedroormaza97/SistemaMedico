@@ -15,7 +15,7 @@ class ajaxPersonas{
 
 public $cedula;
 public function ajaxEditarPersona(){
-	$item = "cedula";
+	$item = "cedulaPer";
 	$valor = $this->cedula;
 
 	$respuesta = ControladorPersonas::ctrMostrarPersona($item,$valor);
