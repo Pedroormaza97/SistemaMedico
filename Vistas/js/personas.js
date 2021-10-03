@@ -17,6 +17,7 @@ $(document).on("click", ".btnEditarPersona", function(){
 	 	dataType: "json",
 	 	success: function(respuesta){
 	 		$("#EditarCedula").val(respuesta["cedulaPer"]);
+	 		$("#nuevaCedula").val(respuesta["cedulaPer"]);nuevaCedula
 	 		$("#EditarNombre").val(respuesta["nombrePer"]);
 	 		$("#EditarApellidop").val(respuesta["apellidoPPer"]);
 	 		$("#EditarApellidom").val(respuesta["apellidoMPer"]);
@@ -45,10 +46,6 @@ $(document).on("click", ".btnEditarPersona", function(){
 	 		$("#EditarBarrio").val(respuesta["barrioPer"]);
 	 		$("#EditarTipoSeguro").val(respuesta["tipoSeguroPer"]);
 
-	 		
-
-
-
 	 		}
 
 
@@ -57,6 +54,7 @@ $(document).on("click", ".btnEditarPersona", function(){
 
 
 })
+
 	
 	
 /*

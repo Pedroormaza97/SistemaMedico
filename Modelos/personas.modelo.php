@@ -96,7 +96,7 @@ require_once "conexion.php";
 
     static public function mdlCrearPersonas($tabla, $datos){
 
-    /*$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`cedula`, `nombre`, `apellido_p`, `apellido_m`, `dir_domicilio`, `sexo`, `etnia`, `estadocivil`, `fecha_naci`, `t_sangre`, `hijosv`, `hijosm`, `tabaquismo`, `ocupacion`, `cargo`, `idpareja`) VALUES (:cedula, :nombre, :apellido_p, :apellido_m, :dir_domicilio, :sexo, :etnia, :estadocivil, :fecha_naci, :t_sangre, :hijosv, :hijosm, :tabaquismo, :ocupacion, :cargo, :idpareja); ");*/
+   
     $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`cedulaPer`, `nombrePer`, `apellidoPPer`, `apellidoMPer`, `emailPer`, `telefonoPer`, `direccionPer`, `fechaNacimientoPer`, `nacionalidadPer`, `lugarNacimientoPer`, `sexoPer`, `etniaPer`, `estadoCivilPer`, `tipoSangrePer`, `hijosVPer`, `hijosMPer`, `tabaquismoPer`, `ocupacionPer`, `cargoPer`, `idPareja`, `referidoPer`, `idFamilia`, `barrioPer`, `parroquiaPer`, `cantonPer`, `provinciaPer`, `tipoSeguroPer`) VALUES (:cedula, :nombre, :apellido_p, :apellido_m, :email, :telefono, :direccion, :fecha_naci, :nacionalidad, :lugarnacimiento, :sexo, :etnia, :estadocivil, :t_sangre, :hijosv, :hijosm, :tabaquismo, :ocupacion, :cargo, :idpareja, :referido, :id_cont_fam, :barrio, :parroquia, :canton, :provincia, :tiposeguro); ");
     
     

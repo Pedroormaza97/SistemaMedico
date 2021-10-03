@@ -37,7 +37,7 @@ public $validarCedula;
 
 public function ajaxValidarCedula(){
 
-	$item = "cedula";
+	$item = "cedulaPer";
 	$valor = $this->validarCedula;
 	$respuesta = ControladorPersonas::ctrMostrarPersona($item,$valor);
 
