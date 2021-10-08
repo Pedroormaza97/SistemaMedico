@@ -55,7 +55,7 @@ public $validarCedulaUsuario;
 
 public function ajaxCrearNombreUsuario(){
 
-	$item = "cedula";
+	$item = "cedulaPer";
 	$valor = $this->validarCedulaUsuario;
 	$respuesta = ControladorPersonas::ctrCrearNombreUsuario($item,$valor);
 
@@ -65,14 +65,14 @@ public function ajaxCrearNombreUsuario(){
 }
 
 /**
- * VALIDAR CEDULA EN FORMULARIO USUARIO
+ * VALIDAR existencia de usuario EN FORMULARIO USUARIO
  */
 
 public $validarUsuario;
 
 public function ajaxValidarUsuario(){
 
-	$item = "cedulaP";
+	$item = "cedulaPer";
 	$valor = $this->validarUsuario;
 	$respuesta1 = ControladorUsuarios::ctrValidarUsuario($item,$valor);
 
@@ -112,7 +112,7 @@ if(isset($_POST["validarCedula"])){
 
 }
 /**********************************************************************
- * EDITAR USUARIO
+ * Validar ingresode cedula en formulario de ingreso de  USUARIO
  */
 if(isset($_POST["validarCedulaUsuario"])){
 

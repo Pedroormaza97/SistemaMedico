@@ -40,7 +40,7 @@ require_once "conexion.php";
 
    
 
-     $stmt = Conexion::conectar()->prepare("SELECT  `cedula`, CONCAT(LOWER(LEFT(`nombre`, 1)), LOWER(`apellido_p`), substring(`cedula`,7)) FROM $tabla WHERE $item = :$item;");
+     $stmt = Conexion::conectar()->prepare("SELECT  `cedulaPer`, CONCAT(LOWER(LEFT(`nombrePer`, 1)), LOWER(`apellidoPPer`), substring(`cedulaPer`,7)) FROM $tabla WHERE $item = :$item;");
 
      $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -62,7 +62,7 @@ require_once "conexion.php";
 
    
 
-     $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE `cedula` = :cedula");
+     $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE `cedulaPer` = :cedula");
 
      $stmt -> bindParam(":cedula", $datos, PDO::PARAM_INT);
 
@@ -152,25 +152,37 @@ require_once "conexion.php";
 
   static public function mdlEditarPersona($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET `cedula`= :cedula,`nombre` = :nombre, `apellido_p` = :apellido_p, `apellido_m` = :apellido_m, `Dir_domicilio` = :Dir_domicilio, `Sexo` = :Sexo, `Etnia`= :Etnia,`EstadoCivil` = :EstadoCivil, `Fecha_Naci` = :Fecha_Naci, `T_sangre` = :T_sangre, `HijosV` = :HijosV, `HijosM` = :HijosM, `Tabaquismo` = :Tabaquismo, `Ocupacion` = :Ocupacion, `Cargo` = :Cargo, `idPareja` = :idPareja  WHERE `cedula`=:cedula");
+    $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET `cedulaPer`= :cedula,`nombrePer` = :nombre, `apellidoPPer` = :apellido_p, `apellidoMPer` = :apellido_m, `emailPer` = :email, `telefonoPer` = :telefono, `direccionPer`= :direccion,`fechaNacimientoPer` = :fecha_naci, `nacionalidadPer` = :nacionalidad, `lugarNacimientoPer` = :lugarnacimiento, `sexoPer` = :sexo, `etniaPer` = :etnia, `estadoCivilPer` = :estadocivil, `tipoSangrePer` = :t_sangre, `hijosVPer` = :hijosv, `hijosMPer` = :hijosm , `tabaquismoPer` = :tabaquismo, `ocupacionPer` = :ocupacion , `cargoPer` = :cargo, `idPareja` = :idpareja, `referidoPer` = :referido, `idFamilia` = :id_cont_fam, `barrioPer` = :barrio, `parroquiaPer` = :parroquia, `cantonPer` = :canton, `provinciaPer` = :provincia , `tipoSeguroPer` = :tiposeguro  WHERE `cedulaPer`=:cedula");
     
 
     $stmt->bindParam(":cedula", $datos["arr_cedula"], PDO::PARAM_STR);
     $stmt->bindParam(":nombre", $datos["arr_nombre"], PDO::PARAM_STR);
-    $stmt->bindParam(":apellido_p", $datos["arr_Apellidop"], PDO::PARAM_STR);
-    $stmt->bindParam(":apellido_m", $datos["arr_Apellidom"], PDO::PARAM_STR);
-    $stmt->bindParam(":Dir_domicilio", $datos["arr_Direccion"], PDO::PARAM_STR);
-    $stmt->bindParam(":Sexo", $datos["arr_Sexo"], PDO::PARAM_STR);
-    $stmt->bindParam(":Etnia", $datos["arr_Etnia"], PDO::PARAM_STR);
-    $stmt->bindParam(":EstadoCivil", $datos["arr_Estadocivil"], PDO::PARAM_STR);
-    $stmt->bindParam(":Fecha_Naci", $datos["arr_FechaNacimiento"], PDO::PARAM_STR);
-    $stmt->bindParam(":T_sangre", $datos["arr_Tiposangre"], PDO::PARAM_STR);
-    $stmt->bindParam(":HijosV", $datos["arr_Hijosvarones"], PDO::PARAM_INT);
-    $stmt->bindParam(":HijosM", $datos["arr_Hijasmujeres"], PDO::PARAM_INT);
-    $stmt->bindParam(":Tabaquismo", $datos["arr_Tabaquismo"], PDO::PARAM_STR);
-    $stmt->bindParam(":Ocupacion", $datos["arr_Ocupacion"], PDO::PARAM_STR);
-    $stmt->bindParam(":Cargo", $datos["arr_Cargo"], PDO::PARAM_STR);
-    $stmt->bindParam(":idPareja", $datos["arr_Idpareja"], PDO::PARAM_INT);
+    $stmt->bindParam(":apellido_p", $datos["arr_apellido_p"], PDO::PARAM_STR);
+    $stmt->bindParam(":apellido_m", $datos["arr_apellido_m"], PDO::PARAM_STR);
+    $stmt->bindParam(":email", $datos["arr_email"], PDO::PARAM_STR);
+    $stmt->bindParam(":telefono", $datos["arr_telefono"], PDO::PARAM_STR);
+    $stmt->bindParam(":direccion", $datos["arr_direccion"], PDO::PARAM_STR);
+    $stmt->bindParam(":fecha_naci", $datos["arr_fechanacimiento"], PDO::PARAM_STR);
+    $stmt->bindParam(":nacionalidad", $datos["arr_nacionalidad"], PDO::PARAM_STR);
+    $stmt->bindParam(":lugarnacimiento", $datos["arr_lugarnacimiento"], PDO::PARAM_STR);
+    $stmt->bindParam(":sexo", $datos["arr_sexo"], PDO::PARAM_STR);
+    $stmt->bindParam(":etnia", $datos["arr_etnia"], PDO::PARAM_STR);
+    $stmt->bindParam(":estadocivil", $datos["arr_estadocivil"], PDO::PARAM_STR);
+    $stmt->bindParam(":t_sangre", $datos["arr_t_sangre"], PDO::PARAM_STR);
+    $stmt->bindParam(":hijosv", $datos["arr_hijosv"], PDO::PARAM_INT);
+    $stmt->bindParam(":hijosm", $datos["arr_hijosm"], PDO::PARAM_INT);
+    $stmt->bindParam(":tabaquismo", $datos["arr_tabaquismo"], PDO::PARAM_STR);
+    $stmt->bindParam(":ocupacion", $datos["arr_ocupacion"], PDO::PARAM_STR);
+    $stmt->bindParam(":cargo", $datos["arr_cargo"], PDO::PARAM_STR);
+    $stmt->bindParam(":idpareja", $datos["arr_idpareja"], PDO::PARAM_INT);
+    $stmt->bindParam(":referido", $datos["arr_referido"], PDO::PARAM_STR);
+    $stmt->bindParam(":id_cont_fam", $datos["arr_id_cont_fam"], PDO::PARAM_INT);
+    $stmt->bindParam(":barrio", $datos["arr_barrio"], PDO::PARAM_STR);
+    $stmt->bindParam(":parroquia", $datos["arr_parroquia"], PDO::PARAM_STR);
+    $stmt->bindParam(":canton", $datos["arr_canton"], PDO::PARAM_STR);
+    $stmt->bindParam(":provincia", $datos["arr_provincia"], PDO::PARAM_STR);
+    $stmt->bindParam(":tiposeguro", $datos["arr_tiposeguro"], PDO::PARAM_STR);
+  
     
   
 

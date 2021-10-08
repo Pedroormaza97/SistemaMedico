@@ -22,7 +22,7 @@
         
 
 
-          <!--TABLA DE USUARIOS-->
+          <!--TABLA DE PERSONAS-->
 <!-- TABLA -->
                   <div class="x_content">
                       <div class="row">

@@ -158,7 +158,7 @@ class ControladorPersonas{
            confirmButtonText: "Ok"}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "ingresarpersonas";
             }
 
 
@@ -176,7 +176,7 @@ class ControladorPersonas{
            confirmButtonText: "Ok"}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "ingresarpersonas";
             }
 
 
@@ -208,10 +208,10 @@ class ControladorPersonas{
    */
     static public function ctrEditarPersona(){
 
-      if(isset($_POST["editarCedula"])){
-        if(preg_match('/^[a-zA-Z0-9 ]+$/', $_POST["editarNombre"]) &&
-          preg_match('/^[a-zA-Z0-9 ]/', $_POST["editarApellidop"])  &&
-           preg_match('/^[a-zA-Z0-9 ]+$/', $_POST["editarApellidom"])){
+      if(isset($_POST["EditarCedula"])){
+        if(preg_match('/^[a-zA-Z0-9 ]+$/', $_POST["EditarNombre"]) &&
+          preg_match('/^[a-zA-Z0-9 ]/', $_POST["EditarApellidop"])  &&
+           preg_match('/^[a-zA-Z0-9 ]+$/', $_POST["EditarApellidom"])){
 
 
 
@@ -219,22 +219,33 @@ class ControladorPersonas{
 
 
 
-       $datos = array("arr_cedula" => $_POST["editarCedula"],
-                        "arr_nombre" => $_POST["editarNombre"],
-                        "arr_Apellidop" => $_POST["editarApellidop"],
-                        "arr_Apellidom" => $_POST["editarApellidom"],
-                        "arr_Direccion" => $_POST["editarDireccion"],
-                        "arr_Sexo" => $_POST["editarSexo"],
-                        "arr_Etnia" => $_POST["editarEtnia"],
-                        "arr_Estadocivil" => $_POST["editarEstadocivil"],
-                        "arr_FechaNacimiento" => $_POST["editarFechaNacimiento"],
-                        "arr_Tiposangre" => $_POST["editarTiposangre"],
-                        "arr_Hijosvarones" => $_POST["editarHijosvarones"],
-                        "arr_Hijasmujeres" => $_POST["editarHijasmujeres"],
-                        "arr_Tabaquismo" => $_POST["editarTabaquismo"],
-                        "arr_Ocupacion" => $_POST["editarOcupacion"],
-                        "arr_Cargo" => $_POST["editarCargo"],
-                        "arr_rIdpareja" => $_POST["editarrIdpareja"]);
+       $datos = array("arr_cedula" => $_POST["EditarCedula"],
+                        "arr_nombre" => $_POST["EditarNombre"],
+                        "arr_apellido_p" => $_POST["EditarApellidop"],
+                        "arr_apellido_m" => $_POST["EditarApellidom"],
+                        "arr_email" => $_POST["EditarEmail"],
+                        "arr_telefono" => $_POST["EditarTelefono"],
+                        "arr_direccion" => $_POST["EditarDireccion"],
+                        "arr_fechanacimiento" => $_POST["EditarFechaNacimiento"],
+                        "arr_nacionalidad" => $_POST["EditarNacionalidad"],
+                        "arr_lugarnacimiento" => $_POST["EditarLugarNacimiento"],
+                        "arr_sexo" => $_POST["EditarSexo"],
+                        "arr_etnia" => $_POST["EditarEtnia"],
+                        "arr_estadocivil" => $_POST["EditarEstadocivil"],
+                        "arr_t_sangre" => $_POST["EditarTipoSangre"],
+                        "arr_hijosv" => $_POST["EditarHijosVarones"],
+                        "arr_hijosm" => $_POST["EditarHijasMujeres"],
+                        "arr_tabaquismo" => $_POST["EditarTabaquismo"],
+                       "arr_ocupacion" => $_POST["EditarOcupacion"],
+                       "arr_cargo" => $_POST["EditarCargo"],
+                       "arr_idpareja" => $_POST["EditarIdpareja"],
+                       "arr_referido" => $_POST["EditarReferido"],
+                       "arr_id_cont_fam" => $_POST["EditarIdFamilia"],
+                       "arr_barrio" => $_POST["EditarBarrio"],
+                       "arr_parroquia" => $_POST["EditarParroquia"],
+                       "arr_canton" => $_POST["EditarCanton"],
+                       "arr_provincia" => $_POST["EditarProvincia"],
+                       "arr_tiposeguro" => $_POST["EditarTipoSeguro"],);
 
        $respuesta = ModeloPersonas::mdlEditarPersona($tabla, $datos);
 
@@ -250,7 +261,7 @@ class ControladorPersonas{
            confirmButtonText: "Ok"}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "ingresarpersonas";
             }
 
 
@@ -268,7 +279,7 @@ class ControladorPersonas{
            confirmButtonText: "Ok"}).then((result)=>{
 
             if(result.value){
-              window.location = "personas";
+              window.location = "ingresarpersonas";
             }
 
 

@@ -62,17 +62,17 @@ $(document).on("click", ".btnEditarUsuario", function(){
 		success: function(respuesta){
 			$("#editarUsuario").val(respuesta["userUsuario"]);
 			$("#passwordActual").val(respuesta["passUsuario"]);
-			$("#editarPerfil").html(respuesta["rol_idrol"]);
-			$("#editarPerfil").val(respuesta["rol_idrol"]);
-			$("#fotoActual").val(respuesta["FotoPerfilUsuario"]);
-			$("#editarCedulap").val(respuesta["cedulaP"]);
-			$("#editarEstado").html(respuesta["Estado"]);
-			$("#editarEstado").val(respuesta["Estado"]);
+			$("#editarPerfil").html(respuesta["idRol"]);
+			$("#editarPerfil").val(respuesta["idRol"]);
+			$("#fotoActual").val(respuesta["fotoPerfilUsuario"]);
+			$("#editarCedulap").val(respuesta["cedulaPer"]);
+			$("#editarEstado").html(respuesta["estado"]);
+			$("#editarEstado").val(respuesta["estado"]);
 
 			
-			if(respuesta["FotoPerfilUsuario"] != ""){
+			if(respuesta["fotoPerfilUsuario"] != ""){
 
-				$(".previsualizar").attr("src", respuesta["FotoPerfilUsuario"]);
+				$(".previsualizar").attr("src", respuesta["fotoPerfilUsuario"]);
 
 			}
 

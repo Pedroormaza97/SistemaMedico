@@ -56,11 +56,11 @@
                           <tr>
                           <td>'.$value["idUsuario"].'</td>
                           <td>'.$value["userUsuario"].'</td>
-                          <td>'.$value["rol_idrol"].'</td>
-                          <td>'.$value["cedulaP"].'</td>';
+                          <td>'.$value["idRol"].'</td>
+                          <td>'.$value["cedulaPer"].'</td>';
 
-                          if($value["FotoPerfilUsuario"] != ""){
-                            echo '<td><img src="'.$value["FotoPerfilUsuario"].'"
+                          if($value["fotoPerfilUsuario"] != ""){
+                            echo '<td><img src="'.$value["fotoPerfilUsuario"].'"
                           class="img-thumbnail" width="40px"></td>';
 
 
@@ -74,10 +74,10 @@
                           }
 
                           
-                          if($value["Estado"] == "activo"){
+                          if($value["estado"] == "activo"){
 
                             echo '<td><button class="btn btn-success btnActivar" idUsuario="'.$value["idUsuario"].'" estadoUsuario="inactivo">Activado</button></td>';
-                          }elseif ($value["Estado"] == "inactivo") {
+                          }elseif ($value["estado"] == "inactivo") {
 
                             echo '<td><button class="btn btn-danger btnActivar" idUsuario="'.$value["idUsuario"].'" estadoUsuario="activo">Desactivado</button></td>';
                             
@@ -85,14 +85,14 @@
                           
 
                           echo '
-                          <td>'.$value["ultimo_login"].'</td>
+                          <td>'.$value["ultimoLogin"].'</td>
                           <td>
 
                           <div class="btn-group">
                           <button type="button" class="btn btn-warning btnEditarUsuario"  idUsuario="'.$value["idUsuario"].'" data-toggle="modal" data-target="#modaleditarusuario"><i class="fa fa-pencil"></i></button>
 
 
-                          <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["idUsuario"].'" usuario="'.$value["userUsuario"].'" fotoUsuario="'.$value["FotoPerfilUsuario"].'"><i class="fa fa-times"></i></button>
+                          <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["idUsuario"].'" usuario="'.$value["userUsuario"].'" fotoUsuario="'.$value["fotoPerfilUsuario"].'"><i class="fa fa-times"></i></button>
                           </div>
                           </td> 
                           </tr>';
@@ -187,8 +187,8 @@
                                         <div class="col-md-6 col-sm-6">
                                           <select class="form-control" Type="text" required  required="required" name="nuevoEstado">
                                             <option></option>
-                                            <option value="Activo">ACTIVO</option>
-                                            <option value="Inactivo">INACTIVO</option>
+                                            <option value="activo">ACTIVO</option>
+                                            <option value="inactivo">INACTIVO</option>
                                           </select>
                                         </div>
                                       </div>

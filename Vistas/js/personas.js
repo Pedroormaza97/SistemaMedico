@@ -239,7 +239,7 @@ Swal.fire({
 
 	}).then((result)=>{
 		if(result.value){
-			window.location = "index.php?ruta=personas&cedula="+cedula;
+			window.location = "index.php?ruta=ingresarpersonas&cedula="+cedula;
 
 
 		}

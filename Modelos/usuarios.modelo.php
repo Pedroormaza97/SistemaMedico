@@ -36,7 +36,7 @@
     
     static public function mdlIngresarUsuario($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`userUsuario`,`passUsuario`, `rol_idrol`, `cedulaP`, `FotoPerfilUsuario`, `Estado`) VALUES (:userUsuario, :passUsuario, :rol_idrol, :cedulaP, :foto, :estado); ");
+    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`userUsuario`,`passUsuario`, `idRol`, `cedulaPer`, `fotoPerfilUsuario`, `estado`) VALUES (:userUsuario, :passUsuario, :rol_idrol, :cedulaP, :foto, :estado); ");
     
 
     $stmt->bindParam(":userUsuario", $datos["arr_usuario"], PDO::PARAM_STR);
@@ -67,7 +67,7 @@
 
   static public function mdlEditarUsuario($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET `userUsuario`= :userUsuario,`passUsuario` = :passUsuario, `rol_idrol` = :rol_idrol, `cedulaP` = :cedulaP, `FotoPerfilUsuario` = :foto, `Estado` = :estado WHERE `userUsuario`=:userUsuario");
+    $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET `userUsuario`= :userUsuario,`passUsuario` = :passUsuario, `idRol` = :rol_idrol, `cedulaPer` = :cedulaP, `fotoPerfilUsuario` = :foto, `estado` = :estado WHERE `userUsuario`=:userUsuario");
     
 
     $stmt->bindParam(":userUsuario", $datos["arr_usuario"], PDO::PARAM_STR);

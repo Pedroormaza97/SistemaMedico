@@ -9,8 +9,8 @@ class ControladorUsuarios{
         if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
   			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["password"])){
 
-          // $encriptar = crypt($_POST["password"], '$2a$07$usesomesillystringforsalt$');
-          $encriptar = $_POST["password"];
+           $encriptar = crypt($_POST["password"], '$2a$07$usesomesillystringforsalt$');
+          //$encriptar = $_POST["password"];
            $tabla = "usuarios";
 
            $item = "userUsuario";

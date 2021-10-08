@@ -68,7 +68,7 @@
             <li><a><i class="fa fa-users"></i> Administrar Personas <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="usuarios">Administrar Usuarios</a></li>
-                <li><a href="personas">Administrar Personas</a></li>
+                <li><a href="ingresarpersonas">Administrar Personas</a></li>
                 <li><a href="categorias">Administrar Categorias</a></li>
               </ul>
             </li>
