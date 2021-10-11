@@ -18,17 +18,7 @@
           <div class="x_title">
             </div>
             
-           <form class="" action="" method="post" novalidate> 
-            <!-- <div class="field item form-group">
-              <label  class="col-md-1" for="nuevaCedula">Cedula:</label>
-                <div class="col-md-3 ">
-                   <input class="form-control" class='optional' name="cedulaHist" id="cedulaHist"  type="text" required='required'/></div>
-
-
-                
-              <button type='button' class="btn btn-primary btnEditarPersona" class="" cedula="123">Buscar</button>
             
-             </div>  -->
                        <!--TABLA DE PERSONAS-->
 <!-- TABLA -->
                   <div class="x_content">
@@ -82,7 +72,7 @@
                           echo '
                           <tr>
                           <td>'.$value["cedulaPer"].'</td>
-                          <td><button type="button" class="btn btn-success btnEditarPersona" cedula="'.$value["cedulaPer"].'"><i class="fa fa-plus-square"></i></button></td>
+                          <td><button type="button" class="btn btn-success btnEditarPersona" cedula="'.$value["cedulaPer"].'" data-toggle="modal" data-target="#modalnuevohistorial"><i class="fa fa-plus-square"></i></button></td>
                           
                           <td>'.$value["nombrePer"].'</td>
                           <td>'.$value["apellidoPPer"].'</td>
@@ -125,11 +115,43 @@
               </div>
             </div>
             
-             <div class="x_content">
-                                            
-                                   
+             
 
-                                            <div class="field item form-group">
+                                          
+
+                                        
+                                        
+                                            
+                                                
+
+                                
+
+
+             
+            </div>
+</div>
+       <!--MODAL DE NUEVO USUARIO-->
+
+            <div class="modal fade " id="modalnuevohistorial" role="dialog" tabindex="-1" aria-hidden="true" >
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                  <form class="" action="" method="post" novalidate>
+                  <div class="x_content">
+                  <!--MODAL HEADER-->
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">INGRESAR UN NUEVO HISTORIAL</h4>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+
+                  <!--MODAL CUERPO-->
+                  <div class="modal-body">
+        
+                      <!-- start form for validation -->
+                      <div class="x_content">
+                                     <span class="section">Informacion del historial</span>
+
+                                      <div class="field item form-group">
                                             <label class="col-md-1" for="nuevaFechaEvento">Fecha de Eventualidad:</label>
                                       <div class="col-md-3 col-sm-3 ">
                                         <input id="nuevaFechaEvento" name="nuevaFechaEvento"  required='required' class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'"
@@ -293,8 +315,7 @@
                                                 <input class="form-control"  name="nuevoIdAlta" required='required' type="number" /></div>
                                            </div> 
 
-
-                                </div>
+                                        
 
                                           
 
@@ -308,20 +329,34 @@
                                                 </div>
                                         
                                        
-                                            <?php
+                                            
+
+
+                                </div>
+                      
+
+
+                    <!--MODAL FOOTER-->
+                  <div class="modal-footer">
+
+                    <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                   </div>
+                
+                </div>
+                <?php
                                              $crearHistoria = new ControladorHistorias();
                                              $crearHistoria -> ctrCrearHistoria();
 
                                                 ?>
-                                         </form>
 
-                                
+              </form>
 
-
-             
+                  
             </div>
-</div>
-       
+           
+            </div>
+        </div>
+        </div>
 <!-- /page content -->
           </div>
        </div>
