@@ -10,6 +10,8 @@ require_once "controladores/historias.controlador.php";
 require_once "Modelos/usuarios.modelo.php";
 require_once "Modelos/personas.modelo.php";
 require_once "Modelos/historias.modelo.php";
+require_once "Modelos/lugares.modelo.php";
+
 
 $plantilla = new controladorPlantilla();
 $plantilla -> ctrPlantilla();

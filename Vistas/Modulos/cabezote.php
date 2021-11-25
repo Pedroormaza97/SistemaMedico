@@ -3,7 +3,7 @@
   <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="inicio" class="site_title"><i class="fa fa-heartbeat" aria-hidden="true"></i> <span>Sistema Médico</span></a>
+        <a href="inicio" class="site_title"><i class="fa fa-user-md" aria-hidden="true"></i> <span>CESAP | SCI</span></a>
       </div>
 
       <div class="clearfix"></div>
@@ -12,7 +12,7 @@
       <!-- sidebar menu -->
       <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
         <div class="menu_section">
-          <h3>General</h3>
+          <h3>Modulos</h3>
           <ul class="nav side-menu">
             <li><a href="inicio"><i class="fa fa-home"></i> Inicio </a>
             </li>
@@ -22,17 +22,17 @@
                 <li><a href="tables_dynamic.html">Table Dynamic</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-edit"></i> Formularios <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-edit"></i> Clinica <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="ingresarpersonas">Ingresar persona</a></li>
+                <li><a href="ingresarpersonas">Registrar Paciente</a></li>
+                <li><a href="agendarcitas">Agendar Citas</a></li>
                 <li><a href="historialclinico">Historial Clinico</a></li>
-                <li><a href="form_validation.html">Form Validation</a></li>
-                <li><a href="form_wizards.html">Form Wizard</a></li>
-                <li><a href="form_upload.html">Form Upload</a></li>
-                <li><a href="form_buttons.html">Form Buttons</a></li>
+                <li><a href="form_wizards.html">Evoluciones</a></li>
+                <li><a href="form_upload.html">Altas Hospitalarias</a></li>
+                <li><a href="form_buttons.html">Emergacias</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-desktop"></i> Consulta <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-desktop"></i> Gestion de Reportes <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="general_elements.html">General Elements</a></li>
                 <li><a href="media_gallery.html">Media Gallery</a></li>
