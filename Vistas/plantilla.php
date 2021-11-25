@@ -105,6 +105,7 @@ session_start();
                 $_GET["ruta"] == "categorias"||
                 $_GET["ruta"] == "ingresarpersonas"|| 
                 $_GET["ruta"] == "historialclinico"||
+                $_GET["ruta"] == "agendarcitas"||
                     $_GET["ruta"] == "salir") {
                include "vistas/modulos/".$_GET["ruta"].".php";
            } else {
@@ -212,14 +213,34 @@ session_start();
     <script src="vistas/vendors/jszip/dist/jszip.min.js"></script>
     <script src="vistas/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="vistas/vendors/pdfmake/build/vfs_fonts.js"></script> 
-   
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="vistas/build/js/custom.js"></script>
 
     <script src="vistas/js/usuarios.js"></script>
     <script src="vistas/js/personas.js"></script>
-    
+   <script src="vistas/js/lugares.js"></script>
+<script src="../sistemamedico/vistas/js/lugares.js"></script>
+ <script>
+        $(document).ready(function() {
+            $('#idProvincia').select();
+            listar_provincias();
+        });
+
+        $("#idProvincia").change(function(){
+           var idprovincia = $("#idProvincia").val();
+           listar_canton(idprovincia);
+        });
+            
+         $("#idCanton").change(function(){
+           var idCanton = $("#idCanton").val();
+           listar_parroquia(idCanton);
+        });
+     
+
+    </script>
+     
         </div>
       </div>
       
